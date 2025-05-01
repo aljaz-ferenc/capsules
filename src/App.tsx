@@ -5,18 +5,16 @@ import Capsules from "./components/capsules/Capsules.tsx";
 import MomentumScroll from "./components/shared/MomentumScroll.tsx";
 
 function App() {
-
-    return (
-        <MomentumScroll>
-
-        <main className='bg-[#181717] text-white'>
-            <Welcome/>
-            <Introduction/>
-            <Houses/>
-            <Capsules/>
-        </main>
-        </MomentumScroll>
-    )
+	return (
+		<MomentumScroll>
+			<main className="bg-[#181717] text-white">
+				<Welcome />
+				<Introduction />
+				<Houses />
+				<Capsules />
+			</main>
+		</MomentumScroll>
+	);
 }
 
-export default App
+export default App;
