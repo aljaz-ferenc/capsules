@@ -1,6 +1,7 @@
 import {useScroll, useTransform, motion, useMotionValueEvent} from "motion/react";
 import {useRef, useState} from "react";
 import RevealText from "./RevealText.tsx";
+import InfiniteScrollText from "./InfiniteScrollText.tsx";
 
 export default function Capsules() {
     const containerRef = useRef(null);
@@ -29,8 +30,8 @@ export default function Capsules() {
     return (
         <section>
             <div className="relative h-[400vh]" ref={containerRef}>
-
                 <div className="sticky top-0 h-screen">
+                    <InfiniteScrollText className='absolute top-1/2 right-0 -translate-y-1/2' word='Capsules' duration={50}/>
                     <motion.div
                         style={{scale: scale1, borderRadius: borderRadius1, filter: brightness1}}
                         className="absolute inset-0 z-10"
