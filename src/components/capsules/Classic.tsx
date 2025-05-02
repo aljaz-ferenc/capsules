@@ -39,6 +39,7 @@ export default function Classic({ scrollYProgress, isActive }: ClassicProps) {
 			/>
 			<RevealText text="Classic Capsule" revealed={isActive} />
 			<OpenDetails
+				calspule="classic"
 				isVisible={isActive}
 				text="Classic Capsule® boasts refined aesthetics and a modern
 interior, creating an intimate retreat in a desert landscape"

@@ -25,6 +25,7 @@ export default function Desert({ scrollYProgress, isActive }: DesertProps) {
 			/>
 			<RevealText text="Terrace Capsule" revealed={isActive} />
 			<OpenDetails
+				calspule="desert"
 				isVisible={isActive}
 				text="With its striking architecture and upscale amenities, Desert
 Capsule® offers an exclusive retreat in the heart of the desert."

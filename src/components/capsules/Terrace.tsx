@@ -37,6 +37,7 @@ export default function Terrace({ scrollYProgress, isActive }: TerracecProps) {
 
 			<RevealText text="Terrace Capsule" revealed={isActive} />
 			<OpenDetails
+				calspule="terrace"
 				isVisible={isActive}
 				text="The most prestige capsule with the biggest terrace
 and jacuzzi with an amazing view of Los Angeles."
