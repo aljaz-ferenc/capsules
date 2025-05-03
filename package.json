@@ -13,6 +13,7 @@
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/vite": "^4.1.5",
+    "@uidotdev/usehooks": "^2.4.1",
     "motion": "^12.9.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

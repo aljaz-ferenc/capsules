@@ -1,7 +1,9 @@
-import { motion, useTransform } from "motion/react";
+import { AnimatePresence, motion, useTransform } from "motion/react";
 import RevealText from "../shared/RevealText.tsx";
 import type { MotionValue } from "motion";
-import OpenDetails from "../shared/OpenDetails.tsx";
+import OpenDetailsBtn from "./OpenDetailsBtn.tsx";
+import capsulesDetails from "../../data/capsulesDetails.ts";
+import { useState } from "react";
 
 type TerracecProps = {
 	scrollYProgress: MotionValue<number>;
@@ -9,39 +11,45 @@ type TerracecProps = {
 };
 
 export default function Terrace({ scrollYProgress, isActive }: TerracecProps) {
-	const y1 = useTransform(scrollYProgress, [1 / 3, 0.65], ["100vh", "0vh"]);
-	const brightness2 = useTransform(
+	const y = useTransform(scrollYProgress, [1 / 3, 0.65], ["100vh", "0vh"]);
+	const brightness = useTransform(
 		scrollYProgress,
 		[0.7, 1],
 		["brightness(1)", "brightness(0.3)"],
 	);
-	const scale2 = useTransform(scrollYProgress, [0.7, 1], [1, 0.9]);
-	const scale2img = useTransform(scrollYProgress, [1 / 3, 0.65], [1.3, 1]);
-	const borderRadius2 = useTransform(scrollYProgress, [1 / 3, 0.65], [100, 50]);
+	const scale = useTransform(scrollYProgress, [0.7, 1], [1, 0.9]);
+	const scaleImg = useTransform(scrollYProgress, [1 / 3, 0.65], [1.3, 1]);
+	const borderRadius = useTransform(scrollYProgress, [1 / 3, 0.65], [100, 50]);
+	const [detailsIsOpen, setDetailsIsOpen] = useState(false);
 
 	return (
 		<motion.div
 			style={{
-				y: y1,
-				scale: scale2,
-				filter: brightness2,
-				borderRadius: borderRadius2,
+				y,
+				scale: scale,
+				filter: brightness,
+				borderRadius: borderRadius,
 			}}
-			className="absolute inset-0 z-10 overflow-hidden"
+			className="absolute inset-0 z-10 overflow-hidden my-2.5"
 		>
 			<motion.img
-				style={{ scale: scale2img }}
+				style={{ scale: scaleImg }}
 				src="terrace.webp"
 				className="h-full w-full object-cover"
 			/>
-
-			<RevealText text="Terrace Capsule" revealed={isActive} />
-			<OpenDetails
-				calspule="terrace"
-				isVisible={isActive}
-				text="The most prestige capsule with the biggest terrace
-and jacuzzi with an amazing view of Los Angeles."
-			/>
+			<AnimatePresence mode="wait">
+				{isActive && (
+					<>
+						<RevealText text="Terrace Capsule" />
+						<OpenDetailsBtn
+							capsule="terrace"
+							sideText={capsulesDetails.terrace.description}
+							detailsOpen={detailsIsOpen}
+							setDetailsOpen={setDetailsIsOpen}
+						/>
+					</>
+				)}
+			</AnimatePresence>
 		</motion.div>
 	);
 }

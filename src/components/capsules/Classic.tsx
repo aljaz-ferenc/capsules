@@ -1,7 +1,9 @@
-import { motion, useTransform } from "motion/react";
+import { AnimatePresence, motion, useTransform } from "motion/react";
 import RevealText from "../shared/RevealText.tsx";
 import type { MotionValue } from "motion";
-import OpenDetails from "../shared/OpenDetails.tsx";
+import { useState } from "react";
+import OpenDetailsBtn from "./OpenDetailsBtn.tsx";
+import capsulesDetails from "../../data/capsulesDetails.ts";
 
 type ClassicProps = {
 	scrollYProgress: MotionValue<number>;
@@ -9,41 +11,48 @@ type ClassicProps = {
 };
 
 export default function Classic({ scrollYProgress, isActive }: ClassicProps) {
-	const scale1 = useTransform(
+	const scale = useTransform(
 		scrollYProgress,
 		[0, 0.25, 1 / 3, 0.7],
 		[0.45, 1, 1, 0.9],
 	);
-	const scale1img = useTransform(scrollYProgress, [0, 0.25], [1.3, 1]);
-	const brightness1 = useTransform(
+	const scaleImg = useTransform(scrollYProgress, [0, 0.25], [1.3, 1]);
+	const brightness = useTransform(
 		scrollYProgress,
 		[1 / 3, 0.7],
 		["brightness(1)", "brightness(0.3)"],
 	);
-	const borderRadius1 = useTransform(scrollYProgress, [0, 0.2], [300, 50]);
+	const borderRadius = useTransform(scrollYProgress, [0, 0.2], [300, 60]);
+	const [detailsIsOpen, setDetailsIsOpen] = useState(false);
 
 	return (
 		<motion.div
 			style={{
-				scale: scale1,
-				borderRadius: borderRadius1,
-				filter: brightness1,
+				scale: scale,
+				borderRadius: borderRadius,
+				filter: brightness,
 			}}
-			className="absolute inset-0 z-10 overflow-hidden"
+			className="absolute inset-0 z-10 overflow-hidden my-2.5"
 		>
 			<motion.img
-				style={{ scale: scale1img }}
+				style={{ scale: scaleImg }}
 				alt="classic capsule"
 				src="classic.webp"
 				className="h-full w-full object-cover"
 			/>
-			<RevealText text="Classic Capsule" revealed={isActive} />
-			<OpenDetails
-				calspule="classic"
-				isVisible={isActive}
-				text="Classic Capsule® boasts refined aesthetics and a modern
-interior, creating an intimate retreat in a desert landscape"
-			/>
+			<AnimatePresence mode="wait">
+				{isActive && (
+					<>
+						<RevealText text="Classic Capsule" />
+						<OpenDetailsBtn
+							capsule="classic"
+							sideText={capsulesDetails.classic.description}
+							detailsOpen={detailsIsOpen}
+							setDetailsOpen={setDetailsIsOpen}
+						/>
+					</>
+				)}
+			</AnimatePresence>
 		</motion.div>
 	);
 }
