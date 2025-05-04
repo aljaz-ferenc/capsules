@@ -11,6 +11,7 @@ import {
 	useState,
 } from "react";
 import { AnimatePresence } from "motion/react";
+import Header from "./components/shared/Header.tsx";
 
 type ReserveContext = {
 	isOpen: boolean | null;
@@ -31,6 +32,7 @@ function App() {
 				value={{ isOpen: reserveModalIsOpen, setIsOpen: setReserveModalIsOpen }}
 			>
 				<main className="bg-[#181717] text-white relative">
+					<Header />
 					<Welcome />
 					<Introduction />
 					<Houses />

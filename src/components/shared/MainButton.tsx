@@ -1,18 +1,22 @@
 import { cn } from "../../utils/utils.ts";
 import { motion } from "motion/react";
 import { useMemo, useState } from "react";
-import { IconRight } from "../../data/icons.tsx";
+import { IconRight, IconUp } from "../../data/icons.tsx";
 
 type MainButtonProps = {
-	className: string;
+	className?: string;
 	text: string;
 	icon: "arrow-up" | "hamburger" | "arrow-right";
+	onClick?: () => void;
 };
 
 export default function MainButton({
 	text,
 	icon,
 	className = "",
+	onClick = () => {
+		return null;
+	},
 }: MainButtonProps) {
 	const [isHovered, setIsHovered] = useState(false);
 
@@ -20,16 +24,19 @@ export default function MainButton({
 		switch (icon) {
 			case "arrow-right":
 				return <IconRight />;
+			case "arrow-up":
+				return <IconUp />;
 		}
 	}, [icon]);
 
 	return (
 		<button
+			onClick={onClick}
 			type="button"
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 			className={cn([
-				"cursor-pointer p-1.5 bg-white rounded-full w-[145px] flex items-center relative h-full overflow-hidden",
+				"cursor-pointer p-1.5 bg-white rounded-full w-[170px] flex items-center relative h-[65px] overflow-hidden",
 				className,
 			])}
 		>
