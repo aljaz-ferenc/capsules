@@ -5,12 +5,12 @@ import OpenDetailsBtn from "./OpenDetailsBtn.tsx";
 import capsulesDetails from "../../data/capsulesDetails.ts";
 import { useState } from "react";
 
-type TerracecProps = {
+type TerraceProps = {
 	scrollYProgress: MotionValue<number>;
 	isActive: boolean;
 };
 
-export default function Terrace({ scrollYProgress, isActive }: TerracecProps) {
+export default function Terrace({ scrollYProgress, isActive }: TerraceProps) {
 	const y = useTransform(scrollYProgress, [1 / 3, 0.65], ["100vh", "0vh"]);
 	const brightness = useTransform(
 		scrollYProgress,

@@ -1,7 +1,14 @@
 import { motion, usePresence, useAnimate } from "motion/react";
-import { type Dispatch, type SetStateAction, useEffect, useState } from "react";
+import {
+	type Dispatch,
+	type SetStateAction,
+	use,
+	useEffect,
+	useState,
+} from "react";
 import type data from "../../data/capsulesDetails.ts";
 import { useClickAway } from "@uidotdev/usehooks";
+import { ReserveContext } from "../../App.tsx";
 
 type CapsuleDetailsModalProps = {
 	isVisible: boolean;
@@ -22,6 +29,7 @@ export default function CapsuleDetailsModal({
 	const ref = useClickAway<HTMLDivElement>(() => {
 		setDetailsOpen(false);
 	});
+	const { setIsOpen } = use(ReserveContext);
 
 	useEffect(() => {
 		if (isPresent) {
@@ -93,6 +101,7 @@ export default function CapsuleDetailsModal({
 							onMouseLeave={() => setCtaHovered(false)}
 							className="detailsText opacity-0 self-start mx-5 hover:text-[#b1a696] overflow-hidden relative text-[18px] transition cursor-pointer"
 							type="button"
+							onClick={() => setIsOpen?.(true)}
 						>
 							Ready to reserve?
 							<motion.div

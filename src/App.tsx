@@ -3,16 +3,43 @@ import Introduction from "./components/sections/Introduction.tsx";
 import Houses from "./components/sections/Houses.tsx";
 import Capsules from "./components/capsules/Capsules.tsx";
 import MomentumScroll from "./components/shared/MomentumScroll.tsx";
+import ReserveModal from "./components/shared/ReserveModal.tsx";
+import {
+	createContext,
+	type Dispatch,
+	type SetStateAction,
+	useState,
+} from "react";
+import { AnimatePresence } from "motion/react";
+
+type ReserveContext = {
+	isOpen: boolean | null;
+	setIsOpen: Dispatch<SetStateAction<boolean>> | null;
+};
+
+export const ReserveContext = createContext<ReserveContext>({
+	isOpen: null,
+	setIsOpen: null,
+});
 
 function App() {
+	const [reserveModalIsOpen, setReserveModalIsOpen] = useState(false);
+
 	return (
 		<MomentumScroll>
-			<main className="bg-[#181717] text-white">
-				<Welcome />
-				<Introduction />
-				<Houses />
-				<Capsules />
-			</main>
+			<ReserveContext.Provider
+				value={{ isOpen: reserveModalIsOpen, setIsOpen: setReserveModalIsOpen }}
+			>
+				<main className="bg-[#181717] text-white relative">
+					<Welcome />
+					<Introduction />
+					<Houses />
+					<Capsules />
+					<AnimatePresence mode="wait">
+						{reserveModalIsOpen && <ReserveModal />}
+					</AnimatePresence>
+				</main>
+			</ReserveContext.Provider>
 		</MomentumScroll>
 	);
 }

@@ -10,7 +10,7 @@ export default function Houses() {
 	const y = useTransform(scrollYProgress, [0, 1], [-300, 0]);
 	const clipPath = useTransform(
 		scrollYProgress,
-		[0, 1],
+		[0, 0.7],
 		["inset(200% 0% 0% 0%)", "inset(0% 0% 0% 0%)"],
 	);
 
