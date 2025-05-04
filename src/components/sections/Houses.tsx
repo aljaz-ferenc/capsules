@@ -27,7 +27,7 @@ export default function Houses() {
 				</motion.h2>
 			</div>
 			<div className="flex justify-around gap-30">
-				<p className=" text-[#b1a696] text-[45px] leading-13">
+				<p className=" text-muted text-[45px] leading-13">
 					You can choose one of three premium capsule houses in our offer. Each
 					of our capsules provides the highest quality and meets the standards
 					adjusted to your needs. Choose the one you like.
@@ -36,23 +36,23 @@ export default function Houses() {
 					<p className="text-[18px] font-bold w-full !min-w-[50vw]">
 						All Capsules® houses—are built based on the same rules:
 					</p>
-					<div className="flex flex-wrap gap-1 text-[45px] leading-10 gap-3">
-						<span className="border-2 border-[#b1a696] rounded-full p-5  h-min text-[#b1a696] p-4">
+					<div className="flex flex-wrap text-[45px] leading-10 gap-3">
+						<span className="border-2 border-muted rounded-full  h-min text-muted p-4">
 							Sustainable
 						</span>
-						<span className="border-2 border-white rounded-full p-5  h-min p-4">
+						<span className="border-2 border-white rounded-full  h-min p-4">
 							Nature-care
 						</span>
-						<span className="border-2 border-[#b1a696] rounded-full p-5  h-min text-[#b1a696] p-4">
+						<span className="border-2 border-muted rounded-full  h-min text-muted p-4">
 							Smart
 						</span>
-						<span className="border-2 border-white rounded-full p-5  h-min p-4">
+						<span className="border-2 border-white rounded-full  h-min p-4">
 							Privacy
 						</span>
-						<span className="border-2 border-[#b1a696] rounded-full p-5  h-min text-[#b1a696] p-4">
+						<span className="border-2 border-muted rounded-full  h-min text-muted p-4">
 							Spacious
 						</span>
-						<span className="border-2 border-white rounded-full p-5  h-min p-4">
+						<span className="border-2 border-white rounded-full  h-min p-4">
 							Glassed-in
 						</span>
 					</div>

@@ -31,7 +31,7 @@ function App() {
 			<ReserveContext.Provider
 				value={{ isOpen: reserveModalIsOpen, setIsOpen: setReserveModalIsOpen }}
 			>
-				<main className="bg-[#181717] text-white relative">
+				<main className="bg-background text-white relative">
 					<Header />
 					<Welcome />
 					<Introduction />

@@ -75,7 +75,7 @@ export default function ReserveModal() {
 		<div ref={ref}>
 			<div
 				ref={scope}
-				className="flex flex-col fixed h-[calc(100%-20px)] p-2.5 pt-5 w-[30%] right-0 -top-2.5 rounded-[60px] my-5 mx-2.5 z-40 bg-[#2a2725]"
+				className="flex flex-col fixed h-[calc(100%-20px)] p-2.5 pt-5 w-[30%] right-0 -top-2.5 rounded-[60px] my-5 mx-2.5 z-40 bg-secondary"
 			>
 				<div className="absolute inset-0" />
 				<div className="px-7 flex flex-col gap-7 content opacity-0">
@@ -91,7 +91,7 @@ export default function ReserveModal() {
 					<h3 className="text-[40px] leading-10.5 max-w-[15ch]  tracking-[-0.3px] ">
 						Make it memorable and reserve one of our—Capsules®
 					</h3>
-					<p className="text-[18px] leading-6 text-[#b1a696]">
+					<p className="text-[18px] leading-6 text-muted">
 						Ready to start your journey to a desert adventure? Secure your
 						capsule by filling out the reservation form.We hope to see you soon!
 					</p>
@@ -118,16 +118,16 @@ export default function ReserveModal() {
 				</div>
 				<div className="mt-auto justify-self-end flex relative text-[18px] p-4.5 w-full gap-7.5 items-center h-[100px]">
 					<div
-						className="origin-left w-0 bg-[#181717] absolute inset-0 rounded-full z-10"
+						className="origin-left w-0 bg-background absolute inset-0 rounded-full z-10"
 						id="cost"
 					/>
 					<div className="flex flex-col z-20 ml-4.5 leading-6 content opacity-0 ">
-						<span className="text-[#b1a696]">Stay</span>
+						<span className="text-muted">Stay</span>
 						<span>04.05 - 09.05</span>
 					</div>
-					<div className="w-px z-20 bg-[#b1a696] h-[75%] separator opacity-0 " />
+					<div className="w-px z-20 bg-muted h-[75%] separator opacity-0 " />
 					<div className="flex flex-col z-20 leading-6 content opacity-0 ">
-						<span className="text-[#b1a696]">Cost</span>
+						<span className="text-muted">Cost</span>
 						<span>10000 USD</span>
 					</div>
 					<MainButton

@@ -48,12 +48,12 @@ export default function MainButton({
 					duration: 0.3,
 					ease: "easeInOut",
 				}}
-				className="text-[#2a2725] flex flex-col w-full h-[200%] "
+				className="text-secondary flex flex-col w-full h-[200%] "
 			>
 				<div className="h-full w-full grid place-items-center">{text}</div>
 				<div className="h-full w-full  grid place-items-center">{text}</div>
 			</motion.div>
-			<div className="bg-[#2a2725] p-3.5 h-full rounded-full aspect-square grid place-items-center">
+			<div className="bg-secondary p-3.5 h-full rounded-full aspect-square grid place-items-center">
 				{iconComponent}
 			</div>
 		</button>

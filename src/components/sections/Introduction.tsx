@@ -17,7 +17,7 @@ export default function Introduction() {
 		<section className="mt-70 px-10">
 			<div className="relative mb-40">
 				<motion.div
-					className="bg-[#181717] absolute inset-0 opacity-90"
+					className="bg-background absolute inset-0 opacity-90"
 					style={{ clipPath }}
 				/>
 				<p
@@ -36,7 +36,7 @@ export default function Introduction() {
 					<img src="welcome-2.webp" alt="" className="rounded-full" />
 				</div>
 				<div className="w-full">
-					<p className="text-[#b1a696] text-[50px] leading-13 max-w-">
+					<p className="text-muted text-[50px] leading-13 max-w-">
 						A place where you can be with yourself and your loved ones. A place
 						where you can experience unforgettable desert things.
 					</p>

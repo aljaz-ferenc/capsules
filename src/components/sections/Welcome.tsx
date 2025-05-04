@@ -10,7 +10,7 @@ export default function Welcome() {
 	const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
 
 	return (
-		<section className="w-screen h-screen relative text-[#F4EFE7] p-2.5">
+		<section className="w-screen h-screen relative text-primary p-2.5">
 			<div
 				className="rounded-[60px] w-full h-full overflow-hidden"
 				ref={containerRef}

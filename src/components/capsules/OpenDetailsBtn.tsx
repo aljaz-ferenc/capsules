@@ -34,7 +34,7 @@ export default function OpenDetailsBtn({
 					transition={{ duration: 0.3 }}
 					onClick={() => setDetailsOpen((prev) => !prev)}
 					type="button"
-					className="z-10 group cursor-pointer relative  overflow-hidden bg-[#b1a696] h-13 text-[50px] font-[100] leading-0  grid place-items-center aspect-square rounded-full"
+					className="z-10 group cursor-pointer relative  overflow-hidden bg-muted h-13 text-[50px] font-[100] leading-0  grid place-items-center aspect-square rounded-full"
 				>
 					{/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
 					<svg

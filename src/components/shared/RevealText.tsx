@@ -17,7 +17,7 @@ export default function RevealText({ text }: RevealTextProps) {
 					<motion.span
 						// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 						key={i}
-						className="text-[100px]"
+						className="text-[100px] text-white"
 						animate={{
 							clipPath: "inset(0% 0% 0% 0%)",
 						}}

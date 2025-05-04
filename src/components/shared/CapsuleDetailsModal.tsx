@@ -64,7 +64,7 @@ export default function CapsuleDetailsModal({
 			<motion.div
 				ref={ref}
 				id="modal"
-				className="flex-col absolute bottom-29 z-20 left-5 rounded-[60px] items-center origin-bottom-left bg-[#2a2725]"
+				className="flex-col absolute bottom-29 z-20 left-5 rounded-[60px] items-center origin-bottom-left bg-secondary"
 			>
 				<motion.div className=" relative overflow-hidden w-[540px] h-[786px]">
 					{/*CONTENT*/}
@@ -82,13 +82,13 @@ export default function CapsuleDetailsModal({
 								/>
 							</div>
 						</motion.div>
-						<motion.p className="detailsText opacity-0 text-[18px] text-[#b1a696] mx-5 leading-6">
+						<motion.p className="detailsText opacity-0 text-[18px] text-muted mx-5 leading-6">
 							{capsuleData?.description}
 						</motion.p>
 						<motion.div className="detailsText opacity-0 text-[18px] mx-5">
 							{capsuleData?.features.map((feature, index) => (
 								<div key={feature.label}>
-									{index !== 0 && <hr className="my-3 text-[#b1a696]" />}
+									{index !== 0 && <hr className="my-3 text-muted" />}
 									<div className="flex justify-between">
 										<label htmlFor="">{feature.label}</label>
 										<p>{feature.value}</p>
@@ -99,7 +99,7 @@ export default function CapsuleDetailsModal({
 						<motion.button
 							onMouseEnter={() => setCtaHovered(true)}
 							onMouseLeave={() => setCtaHovered(false)}
-							className="detailsText opacity-0 self-start mx-5 hover:text-[#b1a696] overflow-hidden relative text-[18px] transition cursor-pointer"
+							className="detailsText opacity-0 self-start mx-5 hover:text-muted overflow-hidden relative text-[18px] transition cursor-pointer"
 							type="button"
 							onClick={() => setIsOpen?.(true)}
 						>
@@ -115,14 +115,14 @@ export default function CapsuleDetailsModal({
 						<div className="mt-auto justify-self-end  flex relative justify-between text-[18px] p-7 py-8">
 							<motion.div
 								id="cost"
-								className="origin-left opacity-0 bg-[#181717] absolute inset-0 rounded-full w-0"
+								className="origin-left opacity-0 bg-background absolute inset-0 rounded-full w-0"
 							/>
-							<motion.div className="detailsText opacity-0 z-10 origin-left text-[#b1a696]">
+							<motion.div className="detailsText opacity-0 z-10 origin-left text-muted">
 								Cost
 							</motion.div>
 							<motion.div className="z-10 detailsText opacity-0">
 								{capsuleData?.price}{" "}
-								<span className="text-[#b1a696]">USD / Night</span>
+								<span className="text-muted">USD / Night</span>
 							</motion.div>
 						</div>
 					</div>
@@ -130,7 +130,7 @@ export default function CapsuleDetailsModal({
 			</motion.div>
 			<motion.div
 				id="overlay"
-				className="absolute inset-0 opacity-0 bg-[#181717] w-screen h-screen"
+				className="absolute inset-0 opacity-0 bg-background w-screen h-screen"
 			/>
 		</div>
 	);
