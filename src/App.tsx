@@ -13,6 +13,7 @@ import {
 import { AnimatePresence } from "motion/react";
 import Header from "./components/shared/Header.tsx";
 import Benefits from "./components/sections/Benefits.tsx";
+import DiscoverActivities from "./components/sections/DiscoverActivities.tsx";
 
 type ReserveContext = {
 	isOpen: boolean | null;
@@ -42,6 +43,7 @@ function App() {
 						{reserveModalIsOpen && <ReserveModal />}
 					</AnimatePresence>
 					<Benefits />
+					<DiscoverActivities/>
 				</main>
 			</ReserveContext.Provider>
 		</MomentumScroll>
