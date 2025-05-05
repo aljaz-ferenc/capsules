@@ -23,8 +23,8 @@ export default function Capsules() {
 	});
 
 	return (
-		<section className="p-2.5">
-			<div className="relative h-[600vh]" ref={containerRef}>
+		<section>
+			<div className="relative h-[600vh] px-2.5 " ref={containerRef}>
 				<div className="sticky top-0 h-screen">
 					<InfiniteScrollText
 						className="absolute top-1/2 right-0 overflow-hidden -translate-y-1/2"
@@ -44,13 +44,26 @@ export default function Capsules() {
 						scrollYProgress={scrollYProgress}
 						isActive={activeCapsule === "desert"}
 					/>
-					{/*DESERT*/}
 				</div>
 			</div>
-			<div className="h-screen relative">
-				<span className="text-4xl text-center absolute top-1/2 left-1/2 -translate-1/2">
-					Our Capsules® are located near Los Angeles with easy access by road.
+			<div className="h-screen relative w-full">
+				<div className="flex flex-col gap-5 absolute top-1/2 left-1/2 -translate-1/2 text-center">
+					<span className="text-[12px] text-muted">Closer than you think</span>
+					<span className="text-[65px] leading-16 inline-block w-[20ch] text-primary">
+						Our Capsules® are located near Los Angeles with easy access by road.
+					</span>
+				</div>
+			</div>
+			<div>
+				<span className="text-[12px] max-w-[20ch] inline-block">
+					Want to learn more about the benefits of—Capsules®?
 				</span>
+				<InfiniteScrollText
+					duration={50}
+					opacity={1}
+					word="Why Capsules®?*"
+					className="bg-background static"
+				/>
 			</div>
 		</section>
 	);

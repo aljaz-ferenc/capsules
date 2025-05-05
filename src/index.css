@@ -16,8 +16,8 @@ body {
 	color: rgb(244, 239, 231) !important;
 }
 
-:root{
-	--primary: #F4EFE7;
+:root {
+	--primary: #f4efe7;
 	--secondary: #2a2725;
 	--muted: #b1a696;
 	--background: #181717;

@@ -23,7 +23,7 @@ export default function InfiniteScrollText({
 				opacity,
 				transition: { duration: 1 },
 			}}
-			className={`absolute w-full overflow-hidden h-[200px] flex items-center absolute ${className}`}
+			className={`absolute w-full overflow-hidden h-[200px] flex items-center ${className}`}
 		>
 			<motion.div
 				className="flex whitespace-nowrap"
