@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import type { SetStateAction, Dispatch } from "react";
 import capsulesDetails from "../../data/capsulesDetails.ts";
-import CapsuleDetailsModal from "../shared/CapsuleDetailsModal.tsx";
+import CapsuleDetailsModal from "./CapsuleDetailsModal.tsx";
 
 type OpenDetailsBtnProps = {
 	detailsOpen: boolean;

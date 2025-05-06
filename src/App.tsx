@@ -1,7 +1,7 @@
 import Welcome from "./components/sections/Welcome.tsx";
 import Introduction from "./components/sections/Introduction.tsx";
 import Houses from "./components/sections/Houses.tsx";
-import Capsules from "./components/capsules/Capsules.tsx";
+import Capsules from "./components/sections/Capsules.tsx";
 import MomentumScroll from "./components/shared/MomentumScroll.tsx";
 import ReserveModal from "./components/shared/ReserveModal.tsx";
 import {
@@ -14,6 +14,7 @@ import { AnimatePresence } from "motion/react";
 import Header from "./components/shared/Header.tsx";
 import Benefits from "./components/sections/Benefits.tsx";
 import DiscoverActivities from "./components/sections/DiscoverActivities.tsx";
+import Reviews from "./components/sections/Reviews.tsx";
 
 type ReserveContext = {
 	isOpen: boolean | null;
@@ -43,7 +44,8 @@ function App() {
 						{reserveModalIsOpen && <ReserveModal />}
 					</AnimatePresence>
 					<Benefits />
-					<DiscoverActivities/>
+					<DiscoverActivities />
+					<Reviews />
 				</main>
 			</ReserveContext.Provider>
 		</MomentumScroll>

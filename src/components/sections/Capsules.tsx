@@ -1,9 +1,9 @@
 import { useScroll, useMotionValueEvent } from "motion/react";
 import { useRef, useState } from "react";
 import InfiniteScrollText from "../shared/InfiniteScrollText.tsx";
-import Classic from "./Classic.tsx";
-import Terrace from "./Terrace.tsx";
-import Desert from "./Desert.tsx";
+import Classic from "../capsules/Classic.tsx";
+import Terrace from "../capsules/Terrace.tsx";
+import Desert from "../capsules/Desert.tsx";
 
 export default function Capsules() {
 	const containerRef = useRef(null);
