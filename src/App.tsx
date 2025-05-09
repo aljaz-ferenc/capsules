@@ -15,6 +15,8 @@ import Header from "./components/shared/Header.tsx";
 import Benefits from "./components/sections/Benefits.tsx";
 import DiscoverActivities from "./components/sections/DiscoverActivities.tsx";
 import Reviews from "./components/sections/Reviews.tsx";
+import BookCapsule from "./components/sections/BookCapsule.tsx";
+import Links from "./components/sections/Links.tsx";
 
 type ReserveContext = {
 	isOpen: boolean | null;
@@ -36,7 +38,7 @@ function App() {
 			>
 				<main className="bg-background text-white relative">
 					<Header />
-					<Welcome />
+					<Welcome titlePosition="top-left" />
 					<Introduction />
 					<Houses />
 					<Capsules />
@@ -46,6 +48,9 @@ function App() {
 					<Benefits />
 					<DiscoverActivities />
 					<Reviews />
+					<Welcome titlePosition="center" />
+					<BookCapsule />
+					<Links />
 				</main>
 			</ReserveContext.Provider>
 		</MomentumScroll>

@@ -26,7 +26,7 @@ export default function Reviews() {
 	};
 
 	return (
-		<section className="mt-50 px-10">
+		<section className="mt-50 px-10" id="reviews">
 			<p className="text-[16px] mb-10">Do people like us?</p>
 			<div className="mb-16">
 				<AnimatePresence mode="wait">

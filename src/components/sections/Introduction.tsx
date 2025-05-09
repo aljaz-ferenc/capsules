@@ -14,7 +14,7 @@ export default function Introduction() {
 	);
 
 	return (
-		<section className="mt-70 px-10">
+		<section className="mt-70 px-10" id="introduction">
 			<div className="relative mb-40">
 				<motion.div
 					className="bg-background absolute inset-0 opacity-90"

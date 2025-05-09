@@ -26,7 +26,7 @@ export default function DiscoverActivities() {
 	const y = useTransform(scrollYProgress, [0, 1], ["-100%", "0%"]);
 
 	return (
-		<div ref={containerRef} className="">
+		<div ref={containerRef} id="activities">
 			<p className="text-[14px]">Ready for an adventure?</p>
 			<motion.h2 className="text-[200px] leading-50" style={{ y }}>
 				{"Discover the desert activities".split("").map((letter, i) => (

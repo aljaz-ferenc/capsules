@@ -15,7 +15,7 @@ export default function Houses() {
 	);
 
 	return (
-		<section className="px-10">
+		<section className="px-10" id="houses">
 			<div className="mb-10" ref={containerRef}>
 				<motion.h2 className="text-[200px] leading-50" style={{ y }}>
 					{"Choose the one you like best".split("").map((letter, i) => (

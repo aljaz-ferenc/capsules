@@ -93,7 +93,7 @@ export default function Benefits() {
 	});
 
 	return (
-		<div ref={scope} className="h-[300vh] relative mb-50">
+		<div ref={scope} className="h-[300vh] relative mb-50" id="whyCapsules">
 			<div className="sticky top-0 flex [&_>div]:rounded-[60px] [&_>div]:overflow-hidden">
 				<div className="h-screen w-1/2 bg-secondary z-0 px-5 py-8" id="slide1">
 					<p className="text-muted text-[60px] max-w-[15ch] leading-16">
