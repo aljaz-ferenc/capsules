@@ -17,6 +17,7 @@ import DiscoverActivities from "./components/sections/DiscoverActivities.tsx";
 import Reviews from "./components/sections/Reviews.tsx";
 import BookCapsule from "./components/sections/BookCapsule.tsx";
 import Links from "./components/sections/Links.tsx";
+import Footer from "./components/sections/Footer.tsx";
 
 type ReserveContext = {
 	isOpen: boolean | null;
@@ -51,6 +52,8 @@ function App() {
 					<Welcome titlePosition="center" />
 					<BookCapsule />
 					<Links />
+					<hr className="text-primary" />
+					<Footer />
 				</main>
 			</ReserveContext.Provider>
 		</MomentumScroll>

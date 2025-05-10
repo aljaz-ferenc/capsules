@@ -3,10 +3,17 @@ import { motion } from "motion/react";
 import { useMemo, useState } from "react";
 import { IconRight, IconUp } from "../../data/icons.tsx";
 
-type MainButtonProps = {
+export type MainButtonProps = {
 	className?: string;
 	text: string;
-	icon: "arrow-up" | "hamburger" | "arrow-right";
+	icon:
+		| "arrow-up"
+		| "hamburger"
+		| "arrow-right"
+		| "linkedIn"
+		| "instagram"
+		| "dribble"
+		| "behance";
 	onClick?: () => void;
 };
 
