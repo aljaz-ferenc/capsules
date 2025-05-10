@@ -8,6 +8,7 @@ import {
 	createContext,
 	type Dispatch,
 	type SetStateAction,
+	use,
 	useState,
 } from "react";
 import { AnimatePresence } from "motion/react";
@@ -18,6 +19,8 @@ import Reviews from "./components/sections/Reviews.tsx";
 import BookCapsule from "./components/sections/BookCapsule.tsx";
 import Links from "./components/sections/Links.tsx";
 import Footer from "./components/sections/Footer.tsx";
+import { motion } from "motion/react";
+import { ScrollContext } from "./state/ScrollContext.tsx";
 
 type ReserveContext = {
 	isOpen: boolean | null;
@@ -31,13 +34,20 @@ export const ReserveContext = createContext<ReserveContext>({
 
 function App() {
 	const [reserveModalIsOpen, setReserveModalIsOpen] = useState(false);
+	const { isScrolling, setIsScrolling } = use(ScrollContext);
+	if (!setIsScrolling) return;
 
 	return (
 		<MomentumScroll>
 			<ReserveContext.Provider
 				value={{ isOpen: reserveModalIsOpen, setIsOpen: setReserveModalIsOpen }}
 			>
-				<main className="bg-background text-white relative">
+				<motion.main
+					animate={{ opacity: isScrolling ? 0 : 1 }}
+					onAnimationComplete={() => setIsScrolling(false)}
+					transition={{ duration: 0.5 }}
+					className="bg-background text-white relative"
+				>
 					<Header />
 					<Welcome titlePosition="top-left" />
 					<Introduction />
@@ -54,7 +64,7 @@ function App() {
 					<Links />
 					<hr className="text-primary" />
 					<Footer />
-				</main>
+				</motion.main>
 			</ReserveContext.Provider>
 		</MomentumScroll>
 	);

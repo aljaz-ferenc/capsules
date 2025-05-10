@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
-import { useState } from "react";
+import { use, useState } from "react";
 import IconButton, { type Icons } from "../shared/IconButton.tsx";
+import { ScrollContext } from "../../state/ScrollContext.tsx";
 
 type Link = {
 	title: string;
@@ -69,13 +70,22 @@ const duration = 0.3;
 
 function Link({ link }: LinkProps) {
 	const [isHovered, setIsHovered] = useState(false);
+	const { isScrolling, setIsScrolling } = use(ScrollContext);
+
+	if (!setIsScrolling) return;
+
+	const handleScrolToSection = (sectionId: string) => {
+		if (isScrolling) return;
+		setIsScrolling(true);
+		setTimeout(() => {
+			document.body.querySelector(`#${sectionId}`)?.scrollIntoView();
+		}, 600);
+	};
 
 	return (
 		<button
 			type="button"
-			onClick={() =>
-				document.body.querySelector(`#${link.scrollToId}`)?.scrollIntoView()
-			}
+			onClick={() => handleScrolToSection(link.scrollToId)}
 			className="relative overflow-hidden block cursor-pointer"
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
