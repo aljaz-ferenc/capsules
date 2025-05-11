@@ -4,6 +4,7 @@ import ChooseCapsule from "./components/sections/ChooseCapsule.tsx";
 import Capsules from "./components/sections/Capsules.tsx";
 import Location from "./components/sections/Location.tsx";
 import WhyCapsules from "./components/sections/WhyCapsules.tsx";
+import Activities from "./components/sections/Activities.tsx";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 			</div>
 			<Location />
 			<WhyCapsules />
+			<Activities />
 		</main>
 	);
 }

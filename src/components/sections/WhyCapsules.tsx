@@ -1,5 +1,6 @@
 import InfiniteScrollText from "../animations/InfiniteScrollText.tsx";
 import capsulesData from "../../data/capsulesData.ts";
+import ItemNumber from "../shared/ItemNumber.tsx";
 
 const slidesText = [
 	{
@@ -39,17 +40,11 @@ export default function WhyCapsules() {
 							{slidesText[index].main}
 						</h3>
 						<div className="flex mb-[30px] px-[10px]">
-							<div className="flex items-end">
-								<span className="border-[2px] border-primary px-[11px] py-1 grid place-items-center rounded-full">
-									{index.toString().padStart(2, "0")}
-								</span>
-								<span className="opacity-20 border-[2px] border-primary px-[11px] py-1 grid place-items-center rounded-full">
-									{Object.entries(capsulesData)
-										.length.toString()
-										.padStart(2, "0")}
-								</span>
-							</div>
-							<p className="ml-5 main-text-small">{data.description}</p>
+							<ItemNumber
+								current={index + 1}
+								total={Object.entries(capsulesData).length}
+							/>
+							<p className="ml-5 main-text-small">{slidesText[index].sub}</p>
 						</div>
 						<img
 							src={`${capsule}.webp`}
