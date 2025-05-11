@@ -3,11 +3,7 @@ import { useRef } from "react";
 import { cn } from "../../utils/utils.ts";
 import { TextLogo } from "../icons.tsx";
 
-type WelcomeProps = {
-	titlePosition: "top-left" | "center";
-};
-
-export default function Hero({ titlePosition }: WelcomeProps) {
+export default function Hero() {
 	const containerRef = useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: containerRef,
@@ -18,16 +14,10 @@ export default function Hero({ titlePosition }: WelcomeProps) {
 	return (
 		<section
 			className="h-screen p-[10px] flex flex-col justify-center"
-			id={titlePosition === "top-left" ? "welcome" : ""}
+			id={"welcome"}
 		>
 			<div className="px-[10px]">
-				<TextLogo
-					className={cn([
-						titlePosition === "center"
-							? "absolute top-1/2 left-1/2 -translate-1/2"
-							: "w-full",
-					])}
-				/>
+				<TextLogo className={cn(["w-full"])} />
 				<h2 className="text-muted max-w-[11ch] mt-[20px] main-text">
 					Closer to Nature-Closer to Yourself
 				</h2>
@@ -40,7 +30,7 @@ export default function Hero({ titlePosition }: WelcomeProps) {
 				src="cap1.jpg"
 				alt="hero page"
 				style={{ scale }}
-				className="h-[45vh] w-full overflow-hidden rounded-[30px]"
+				className="h-[45vh] w-full overflow-hidden rounded-[30px] object-cover"
 			/>
 		</section>
 	);

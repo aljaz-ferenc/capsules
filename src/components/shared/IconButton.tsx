@@ -20,9 +20,17 @@ type IconButtonProps = {
 	icon: Icons;
 	onClick?: () => void;
 	href?: string;
+	height?: string;
+	padding?: string;
 };
 
-export default function IconButton({ icon, onClick, href }: IconButtonProps) {
+export default function IconButton({
+	icon,
+	onClick,
+	href,
+	height = "44px",
+	padding = "0.8vw",
+}: IconButtonProps) {
 	const iconComponent = useMemo(() => {
 		switch (icon) {
 			case "linkedIn":
@@ -44,7 +52,8 @@ export default function IconButton({ icon, onClick, href }: IconButtonProps) {
 		return (
 			<a
 				href={href}
-				className="relative h-[44px] aspect-square rounded-full border border-muted p-[0.8vw] [&_path]:fill-muted group hover:[&_path]:fill-secondary transition-all cursor-pointer"
+				className="relative  aspect-square rounded-full border border-muted  [&_path]:fill-muted group hover:[&_path]:fill-secondary transition-all cursor-pointer"
+				style={{ height, padding }}
 			>
 				<span className="z-10 relative">{iconComponent}</span>
 				<div className="absolute inset-0 bg-muted scale-0 group-hover:scale-100 transition rounded-full" />
@@ -56,7 +65,8 @@ export default function IconButton({ icon, onClick, href }: IconButtonProps) {
 		<button
 			onClick={onClick}
 			type="button"
-			className="relative h-[44px] aspect-square rounded-full border border-muted duration-300 p-[0.8vw] [&_path]:fill-muted group hover:[&_path]:fill-secondary transition-all cursor-pointer"
+			className="relative  aspect-square rounded-full border border-muted duration-300  [&_path]:fill-muted group hover:[&_path]:fill-secondary transition-all cursor-pointer"
+			style={{ height, padding }}
 		>
 			<div className="z-10 relative transition-all duration-300 p-2">
 				{iconComponent}

@@ -6,20 +6,25 @@ import Location from "./components/sections/Location.tsx";
 import WhyCapsules from "./components/sections/WhyCapsules.tsx";
 import Activities from "./components/sections/Activities.tsx";
 import Reviews from "./components/sections/Reviews.tsx";
+import Footer from "./components/sections/Footer.tsx";
+import { ScrollProvider } from "./state/ScrollContext.tsx";
 
 function App() {
 	return (
 		<main className="bg-background">
-			<Hero titlePosition="top-left" />
-			<Welcome />
-			<div className="bg-gradient-to-b from-transparent via-darkBrown to-transparent">
-				<ChooseCapsule />
-				<Capsules />
-			</div>
-			<Location />
-			<WhyCapsules />
-			<Activities />
-			<Reviews />
+			<ScrollProvider>
+				<Hero />
+				<Welcome />
+				<div className="bg-gradient-to-b from-transparent via-darkBrown to-transparent">
+					<ChooseCapsule />
+					<Capsules />
+				</div>
+				<Location />
+				<WhyCapsules />
+				<Activities />
+				<Reviews />
+				<Footer />
+			</ScrollProvider>
 		</main>
 	);
 }
