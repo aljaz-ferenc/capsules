@@ -3,6 +3,7 @@ import Welcome from "./components/sections/Welcome.tsx";
 import ChooseCapsule from "./components/sections/ChooseCapsule.tsx";
 import Capsules from "./components/sections/Capsules.tsx";
 import Location from "./components/sections/Location.tsx";
+import WhyCapsules from "./components/sections/WhyCapsules.tsx";
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 				<Capsules />
 			</div>
 			<Location />
+			<WhyCapsules />
 		</main>
 	);
 }
