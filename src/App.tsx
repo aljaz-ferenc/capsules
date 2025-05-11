@@ -1,8 +1,10 @@
+import Hero from "./components/sections/Hero.tsx";
+
 function App() {
 	return (
-		<p className="text-sky-500 text-center font-bold text-2xl mt-10">
-			Hello World!
-		</p>
+		<main className="bg-background">
+			<Hero titlePosition="top-left" />
+		</main>
 	);
 }
 
