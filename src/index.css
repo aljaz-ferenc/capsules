@@ -31,9 +31,9 @@ body {
 }
 
 .label {
-	font-size: 0.9vw;
-	color: var(--color-primary);
-	line-height: 1.2vw;
+	font-size: 14px;
+	line-height: 18px;
+	letter-spacing: -0.2px;
 }
 
 .main-text {
@@ -43,7 +43,7 @@ body {
 }
 
 .main-text-small {
-	font-size: 14px !important;
+	font-size: 14px;
 	line-height: 18px;
 	letter-spacing: -0.2px;
 }
@@ -51,6 +51,12 @@ body {
 .main-text-large {
 	font-size: 35px;
 	line-height: 38px;
+	letter-spacing: -0.2px;
+}
+
+.section-title {
+	font-size: 55px;
+	line-height: 50px;
 	letter-spacing: -0.2px;
 }
 
