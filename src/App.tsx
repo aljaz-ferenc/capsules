@@ -2,6 +2,7 @@ import Hero from "./components/sections/Hero.tsx";
 import Welcome from "./components/sections/Welcome.tsx";
 import ChooseCapsule from "./components/sections/ChooseCapsule.tsx";
 import Capsules from "./components/sections/Capsules.tsx";
+import Location from "./components/sections/Location.tsx";
 
 function App() {
 	return (
@@ -12,6 +13,7 @@ function App() {
 				<ChooseCapsule />
 				<Capsules />
 			</div>
+			<Location />
 		</main>
 	);
 }
