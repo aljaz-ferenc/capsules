@@ -48,6 +48,12 @@ body {
 	letter-spacing: -0.2px;
 }
 
+.main-text-large {
+	font-size: 35px;
+	line-height: 38px;
+	letter-spacing: -0.2px;
+}
+
 .subtitle {
 	font-size: 5vw;
 	line-height: 5vw;
