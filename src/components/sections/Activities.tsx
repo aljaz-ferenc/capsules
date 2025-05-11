@@ -1,12 +1,13 @@
 import RevealSectionTitle from "../animations/RevealSectionTitle.tsx";
 import { activities } from "../../data/activities.ts";
-import { motion, useInView } from "motion/react";
+import { useInView } from "motion/react";
 import { useRef } from "react";
 import ActivitySlide from "../activities/ActivitySlide.tsx";
 import { Swiper, SwiperSlide } from "swiper/react";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import "swiper/css";
+import ProgressBar from "../shared/ProgressBar.tsx";
 
 export default function Activities() {
 	const activitiesRef = useRef<HTMLDivElement>(null);
@@ -39,22 +40,10 @@ export default function Activities() {
 									{activity.duration}h duration
 								</span>
 							</div>
-							<div className="relative h-[1.5px] mb-[34px] mt-5">
-								<div
-									className={
-										"h-full w-full absolute left-0 top-0 opacity-20 bg-muted z-10"
-									}
-								/>
-								<motion.div
-									className={
-										"h-full w-full absolute left-0 top-0 z-20 bg-primary origin-left"
-									}
-									animate={{
-										scaleX: activitiesInView ? activity.progress / 100 : 0,
-									}}
-									transition={{ duration: 1, ease: "easeInOut" }}
-								/>
-							</div>
+							<ProgressBar
+								progress={activitiesInView ? activity.progress / 100 : 0}
+								className="relative h-[1.5px] mb-[34px] mt-5"
+							/>
 						</div>
 					))}
 				</div>
