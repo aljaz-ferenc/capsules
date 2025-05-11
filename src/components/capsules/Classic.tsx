@@ -43,7 +43,7 @@ export default function Classic({ scrollYProgress, isActive }: ClassicProps) {
 			<AnimatePresence mode="wait">
 				{isActive && (
 					<>
-						<RevealText text="Classic Capsule" />
+						<RevealText text="Classic Capsule®" />
 						<OpenDetailsBtn
 							capsule="classic"
 							sideText={capsulesDetails.classic.description}

@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { cn } from "../../utils/utils.ts";
 
 type InfiniteScrollTextProps = {
 	word: string;
@@ -11,7 +12,7 @@ type InfiniteScrollTextProps = {
 export default function InfiniteScrollText({
 	word,
 	duration = 10,
-	fontSize = "200px",
+	fontSize = "11vw",
 	opacity,
 	className = "",
 }: InfiniteScrollTextProps) {
@@ -23,7 +24,10 @@ export default function InfiniteScrollText({
 				opacity,
 				transition: { duration: 1 },
 			}}
-			className={`absolute w-full h-[2ch] overflow-hidden h-[200px] flex items-center ${className}`}
+			className={cn([
+				"absolute w-full overflow-hidden flex items-center bg-transparent",
+				className,
+			])}
 		>
 			<motion.div
 				className="flex whitespace-nowrap"

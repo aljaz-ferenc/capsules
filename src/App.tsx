@@ -21,6 +21,7 @@ import Links from "./components/sections/Links.tsx";
 import Footer from "./components/sections/Footer.tsx";
 import { motion } from "motion/react";
 import { ScrollContext } from "./state/ScrollContext.tsx";
+import MainButton from "./components/shared/MainButton.tsx";
 
 type ReserveContext = {
 	isOpen: boolean | null;
@@ -48,10 +49,16 @@ function App() {
 					transition={{ duration: 0.5 }}
 					className="bg-background text-white relative"
 				>
+					<MainButton
+						icon="hamburger"
+						text="Menu"
+						className="fixed left-1/2 -translate-x-1/2 bottom-10 z-30"
+					/>
 					<Header />
 					<Welcome titlePosition="top-left" />
 					<Introduction />
 					<Houses />
+
 					<Capsules />
 					<AnimatePresence mode="wait">
 						{reserveModalIsOpen && <ReserveModal />}
@@ -61,9 +68,11 @@ function App() {
 					<Reviews />
 					<Welcome titlePosition="center" />
 					<BookCapsule />
-					<Links />
-					<hr className="text-primary" />
-					<Footer />
+					<div className="bg-gradient-to-b from-transparent via-muted/10 to-muted/10">
+						<Links />
+						<hr className="text-primary" />
+						<Footer />
+					</div>
 				</motion.main>
 			</ReserveContext.Provider>
 		</MomentumScroll>

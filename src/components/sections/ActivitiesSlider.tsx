@@ -19,22 +19,20 @@ export default function ActivitiesSlider() {
 							key={slide.id}
 							className="rounded-[60px] relative overflow-hidden w-[80vw]"
 						>
-							<div className="flex justify-between absolute top-8 w-full px-10">
-								<h3 className=" text-[30px] max-w-[10ch] leading-8">
+							<div className="flex justify-between absolute top-8 w-full px-5">
+								<h3 className=" main-text !text-primary max-w-[10ch]">
 									{slide.title}
 								</h3>
-								<span className="rounded-full border border-white self-start px-3">
+								<span className="rounded-full border border-primary self-start py-[0.25vw] px-[0.6vw] label">
 									{slide.difficulty}
 								</span>
 							</div>
-							<div className="flex justify-between absolute bottom-8 w-full px-10">
-								<span className="max-w-[43ch] leading-5">
-									{slide.description}
+							<div className="flex justify-between absolute bottom-8 w-full px-5">
+								<span className="max-w-[43ch] label">{slide.description}</span>
+								<span className="ml-auto rounded-full border border-primary px-[0.6vw] py-[0.25vw] self-start label">
+									{(index + 1).toString().padStart(2, "0")}
 								</span>
-								<span className="ml-auto rounded-full border border-white px-3 self-start">
-									0{index}
-								</span>
-								<span className="rounded-full border border-white px-3 self-start opacity-20">
+								<span className="rounded-full border border-primary px-[0.6vw] py-[0.25vw] self-start opacity-20 label">
 									0{activities.length}
 								</span>
 							</div>

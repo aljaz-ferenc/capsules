@@ -1,60 +1,38 @@
-import { useScroll, useTransform, motion } from "motion/react";
-import { useRef } from "react";
+import RevealSectionTitle from "../shared/RevealSectionTitle.tsx";
 
 export default function Houses() {
-	const containerRef = useRef(null);
-	const { scrollYProgress } = useScroll({
-		target: containerRef,
-		offset: ["start end", "start center"],
-	});
-	const y = useTransform(scrollYProgress, [0, 1], [-300, 0]);
-	const clipPath = useTransform(
-		scrollYProgress,
-		[0, 0.7],
-		["inset(200% 0% 0% 0%)", "inset(0% 0% 0% 0%)"],
-	);
-
 	return (
 		<section className="px-10" id="houses">
-			<div className="mb-10" ref={containerRef}>
-				<motion.h2 className="text-[200px] leading-50" style={{ y }}>
-					{"Choose the one you like best".split("").map((letter, i) => (
-						// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-						<motion.span key={i} style={{ clipPath }}>
-							{letter}
-						</motion.span>
-					))}
-				</motion.h2>
-			</div>
-			<div className="flex justify-around gap-30">
-				<p className=" text-muted text-[45px] leading-13">
+			<RevealSectionTitle
+				title="Choose the one you like best"
+				subtitle="Discover available Capsules®"
+			/>
+			<div className="flex justify-around gap-[7vw]">
+				<p className="main-text max-w-[25.5ch]">
 					You can choose one of three premium capsule houses in our offer. Each
 					of our capsules provides the highest quality and meets the standards
 					adjusted to your needs. Choose the one you like.
 				</p>
 				<div className="flex flex-col justrify-between h-full gap-10">
-					<p className="text-[18px] font-bold w-full !min-w-[50vw]">
+					<p className="label font-bold w-[25ch]">
 						All Capsules® houses—are built based on the same rules:
 					</p>
-					<div className="flex flex-wrap text-[45px] leading-10 gap-3">
-						<span className="border-2 border-muted rounded-full  h-min text-muted p-4">
-							Sustainable
-						</span>
-						<span className="border-2 border-white rounded-full  h-min p-4">
-							Nature-care
-						</span>
-						<span className="border-2 border-muted rounded-full  h-min text-muted p-4">
-							Smart
-						</span>
-						<span className="border-2 border-white rounded-full  h-min p-4">
-							Privacy
-						</span>
-						<span className="border-2 border-muted rounded-full  h-min text-muted p-4">
-							Spacious
-						</span>
-						<span className="border-2 border-white rounded-full  h-min p-4">
-							Glassed-in
-						</span>
+					<div className="flex flex-wrap text-[45px] leading-10 gap-[0.5vw]">
+						{[
+							"Sustainable",
+							"Nature-Care",
+							"Smart",
+							"Privacy",
+							"Spacious",
+							"Glassed-in",
+						].map((rule) => (
+							<span
+								key={rule}
+								className=" border-[0.15vw] border-muted rounded-full h-min text-muted px-[1.3vw] py-[0.9vw] main-text even:!text-primary"
+							>
+								{rule}
+							</span>
+						))}
 					</div>
 				</div>
 			</div>

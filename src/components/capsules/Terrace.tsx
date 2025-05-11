@@ -40,7 +40,7 @@ export default function Terrace({ scrollYProgress, isActive }: TerraceProps) {
 			<AnimatePresence mode="wait">
 				{isActive && (
 					<>
-						<RevealText text="Terrace Capsule" />
+						<RevealText text="Terrace Capsule®" />
 						<OpenDetailsBtn
 							capsule="terrace"
 							sideText={capsulesDetails.terrace.description}

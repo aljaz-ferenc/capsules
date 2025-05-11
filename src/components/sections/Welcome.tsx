@@ -1,6 +1,7 @@
 import { useScroll, useTransform, motion } from "motion/react";
 import { useRef } from "react";
 import { cn } from "../../utils/utils.ts";
+import { TextLogo } from "../../data/icons.tsx";
 
 type WelcomeProps = {
 	titlePosition: "top-left" | "center";
@@ -17,7 +18,7 @@ export default function Welcome({ titlePosition }: WelcomeProps) {
 	return (
 		<section
 			className="w-screen h-screen relative text-primary p-2.5"
-			id="welcome"
+			id={titlePosition === "top-left" ? "welcome" : ""}
 		>
 			<div
 				className="rounded-[60px] w-full h-full overflow-hidden"
@@ -31,25 +32,23 @@ export default function Welcome({ titlePosition }: WelcomeProps) {
 				/>
 			</div>
 			<div className="p-8 absolute top-0 h-full w-full z-20 flex flex-col justify-between">
-				<h1
+				<TextLogo
 					className={cn([
-						"block text-[250px] leading-[1] tracking-[-8px]",
-						titlePosition === "center" &&
-							"absolute top-1/2 left-1/2 -translate-1/2",
+						titlePosition === "center"
+							? "absolute top-1/2 left-1/2 -translate-1/2"
+							: "w-[52vw]",
 					])}
-				>
-					Capsules
-				</h1>
+				/>
 				<div
 					className={cn([
 						"flex justify-between w-full text-xl items-end pb-4",
-						titlePosition === "center" && "absolute  bottom-5",
+						titlePosition === "center" && "absolute bottom-5 pr-[4vw]",
 					])}
 				>
-					<span className="text-[50px] max-w-[13ch] leading-12">
+					<span className="text-[2.5vw] max-w-[11ch] leading-[2.5vw]">
 						Closer to Nature—Closer to Yourself
 					</span>
-					<span className="max-w-[36ch] text-lg leading-6 font-bold mr-2 pb-4">
+					<span className="max-w-[34ch] text-[0.9vw] leading-[1.2vw] font-bold mr-2 pb-4 tracking-wider">
 						Spend unforgettable and remarkable time in the Californian desert
 						with—Capsules.
 					</span>

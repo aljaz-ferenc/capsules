@@ -27,8 +27,8 @@ const socials: { icon: Icons; href: string }[] = [
 export default function Links() {
 	return (
 		<section className="px-5 mb-10">
-			<div className="mt-80 flex justify-between text-[30px] mb-20">
-				<div className="text-muted max-w-[25ch] flex flex-col gap-2">
+			<div className="mt-[25vw] flex justify-between mb-[8vw]">
+				<div className="text-muted text-[1.8vw] max-w-[25ch] flex flex-col gap-2 leading-[2.2vw]">
 					<p>
 						This website is just a concept work done by-Moyra to showcase our
 						capabilities.
@@ -47,12 +47,12 @@ export default function Links() {
 				</div>
 			</div>
 			<div className="flex justify-between items-center">
-				<div className="flex gap-2">
+				<div className="flex">
 					{socials.map((icon) => (
 						<IconButton key={icon.icon} icon={icon.icon} />
 					))}
 				</div>
-				<div className="text-[16px] text-muted text-right max-w-[25ch]">
+				<div className="label !text-muted text-right max-w-[25ch]">
 					<p>
 						Meet Capsules®—modern and cozy houses, in the California desert.
 					</p>
@@ -86,7 +86,7 @@ function Link({ link }: LinkProps) {
 		<button
 			type="button"
 			onClick={() => handleScrolToSection(link.scrollToId)}
-			className="relative overflow-hidden block cursor-pointer"
+			className="relative overflow-hidden block cursor-pointer text-[1.8vw]"
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>

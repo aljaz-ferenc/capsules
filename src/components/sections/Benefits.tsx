@@ -3,8 +3,10 @@ import {
 	motion,
 	useMotionValueEvent,
 	useAnimate,
+	AnimatePresence,
 } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import TextSwitchEffect from "../shared/TextSwitchEffect.tsx";
 
 const duration = 1;
 
@@ -95,9 +97,17 @@ export default function Benefits() {
 	return (
 		<div ref={scope} className="h-[300vh] relative mb-50" id="whyCapsules">
 			<div className="sticky top-0 flex [&_>div]:rounded-[60px] [&_>div]:overflow-hidden">
-				<div className="h-screen w-1/2 bg-secondary z-0 px-5 py-8" id="slide1">
-					<p className="text-muted text-[60px] max-w-[15ch] leading-16">
+				<div
+					className="h-screen w-1/2 bg-secondary z-0 px-5 py-8 relative"
+					id="slide1"
+				>
+					<p className="main-text max-w-[15ch]">
 						Enjoy the view through—the wide panoramic glass window
+					</p>
+					<SlideCounter count={1} total={3} />
+					<p className="label absolute bottom-10 right-5 max-w-[35ch]">
+						Get closer to the desert nature than ever before and admire this
+						unique, breathtaking landscape.
 					</p>
 				</div>
 				<motion.div
@@ -121,62 +131,35 @@ export default function Benefits() {
 					id="slide3"
 					className="h-screen w-1/2 absolute bg-secondary right-0 top-full z-0 px-5 py-8"
 				>
-					<motion.p
-						animate={{
-							y: phase === 1 ? 0 : "-1ex",
-						}}
-						transition={{ duration }}
-						className="text-muted text-[60px] max-w-[15ch] leading-16 absolute"
-					>
-						{"Sound of silence -out of the city rush with complete privacy"
-							.split("")
-							.map((letter, index) => {
-								return (
-									<motion.span
-										animate={{
-											clipPath:
-												phase === 1
-													? "inset(0% 0% 0% 0%)"
-													: "inset(0% 0% 100% 0%)",
-											y: phase === 1 ? 0 : "-1ex",
-										}}
-										transition={{ duration }}
-										// biome-ignore lint/suspicious/noArrayIndexKey: static content
-										key={index}
-									>
-										{letter}
-									</motion.span>
-								);
-							})}
-					</motion.p>
-					<motion.p
-						animate={{
-							y: phase > 1 ? 0 : "-1ex",
-						}}
-						transition={{ duration }}
-						className="text-muted text-[60px] max-w-[10ch] leading-16"
-					>
-						{"Relax yourself in-Wooden Jacuzzi"
-							.split("")
-							.map((letter, index) => {
-								return (
-									<motion.span
-										animate={{
-											y: phase > 1 ? 0 : "-1ex",
-											clipPath:
-												phase === 1
-													? "inset(0% 0% 100% 0%)"
-													: "inset(0% 0% 0% 0%)",
-										}}
-										transition={{ duration }}
-										// biome-ignore lint/suspicious/noArrayIndexKey: static content
-										key={index}
-									>
-										{letter}
-									</motion.span>
-								);
-							})}
-					</motion.p>
+					<SlideCounter count={phase === 2 ? 3 : 2} total={3} />
+					<AnimatePresence mode="wait">
+						{phase > 1 ? (
+							<TextSwitchEffect
+								key={1}
+								text="Here, every whisper of nature recharges your soul-your sanctuary of solitude awaits."
+								className="label absolute bottom-10 right-5 max-w-[38ch]"
+							/>
+						) : (
+							<TextSwitchEffect
+								key={2}
+								text="Let the natural textures and gentle bubbles transport you to a realm of pure, handcrafted bliss."
+								className="label absolute bottom-10 right-5 max-w-[38ch]"
+							/>
+						)}
+						{phase > 1 ? (
+							<TextSwitchEffect
+								key={1}
+								text="Sound of silence -out of the city rush with complete privacy"
+								className="main-text max-w-[15ch] absolute"
+							/>
+						) : (
+							<TextSwitchEffect
+								key={2}
+								text="Relax yourself in-Wooden Jacuzzi"
+								className="main-text max-w-[15ch] absolute"
+							/>
+						)}
+					</AnimatePresence>
 				</motion.div>
 				<motion.div
 					id="slide4"
@@ -188,6 +171,24 @@ export default function Benefits() {
 						className="h-full object-cover absolute inset-0"
 					/>
 				</motion.div>
+			</div>
+		</div>
+	);
+}
+
+type SlideCounterProps = {
+	count: number;
+	total: number;
+};
+
+function SlideCounter({ count, total }: SlideCounterProps) {
+	return (
+		<div className="absolute bottom-8 left-5 flex text-primary">
+			<div className="rounded-full grid place-items-center aspect-square border label p-[0.5vw] border-primary">
+				{count.toString().padStart(2, "0")}
+			</div>
+			<div className="rounded-full grid place-items-center aspect-square border label p-[0.5vw] opacity-20 border-primary text-primary">
+				{total.toString().padStart(2, "0")}
 			</div>
 		</div>
 	);

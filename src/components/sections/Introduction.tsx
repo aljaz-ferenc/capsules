@@ -21,24 +21,26 @@ export default function Introduction() {
 					style={{ clipPath }}
 				/>
 				<p
-					className="text-[88.5px] leading-22 tracking-[1px] max-w-[35ch]"
+					className="text-[5vw] leading-[5.2vw] max-w-[27ch] "
 					ref={containerRef}
 				>
 					Welcome to a world of wild California desert with Capsules®, where you
-					will discover exquisite nature observing from capsule houses, nestled
-					in the one of the most breathtaking destination on the United
-					States.destination on the United States.
+					will discover exquisite nature observing it from capsule houses,
+					nestled in the one of the most breathtaking destination in the United
+					States.
 				</p>
 			</div>
-			<div className="flex items-start">
-				<div className="flex pb-50 w-full">
-					<img src="welcome-1.webp" alt="" className="rounded-full" />
-					<img src="welcome-2.webp" alt="" className="rounded-full" />
+			<div className="w-full pb-50 flex items-center">
+				<div className="flex w-1/2 pr-[10vw]">
+					<img src="welcome-1.webp" alt="" className="rounded-full w-1/2" />
+					<img src="welcome-2.webp" alt="" className="rounded-full w-1/2" />
 				</div>
-				<div className="w-full">
-					<p className="text-muted text-[50px] leading-13 max-w-">
-						A place where you can be with yourself and your loved ones. A place
-						where you can experience unforgettable desert things.
+				<div className="w-full [&_p]:text-muted text-[2vw] leading-[2vw] pl-[4vw] max-w-[50vw]">
+					<p className="max-w-[23ch] main-text">
+						A place where you can be with yourself and your loved ones.
+					</p>
+					<p className="max-w-[25ch] main-text">
+						A place where you can experience unforgettable desert things.
 					</p>
 				</div>
 			</div>

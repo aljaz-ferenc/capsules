@@ -2,11 +2,19 @@ import {
 	IconBehance,
 	IconDribble,
 	IconInstagram,
+	IconLeft,
 	IconLinkedIn,
+	IconRight,
 } from "../../data/icons.tsx";
 import { useMemo } from "react";
 
-export type Icons = "linkedIn" | "instagram" | "dribble" | "behance";
+export type Icons =
+	| "linkedIn"
+	| "instagram"
+	| "dribble"
+	| "behance"
+	| "arrow-right"
+	| "arrow-left";
 
 type IconButtonProps = {
 	icon: Icons;
@@ -25,6 +33,10 @@ export default function IconButton({ icon, onClick, href }: IconButtonProps) {
 				return <IconDribble />;
 			case "behance":
 				return <IconBehance />;
+			case "arrow-left":
+				return <IconLeft />;
+			case "arrow-right":
+				return <IconRight />;
 		}
 	}, [icon]);
 
@@ -32,7 +44,7 @@ export default function IconButton({ icon, onClick, href }: IconButtonProps) {
 		return (
 			<a
 				href={href}
-				className="relative -scale-x-100 h-10 w-10 rounded-full border border-muted p-2.5 [&_path]:fill-muted group hover:[&_path]:fill-secondary transition-all cursor-pointer"
+				className="relative  h-[3vw] aspect-square rounded-full border border-muted p-[0.8vw] [&_path]:fill-muted group hover:[&_path]:fill-secondary transition-all cursor-pointer"
 			>
 				<span className="z-10 relative">{iconComponent}</span>
 				<div className="absolute inset-0 bg-muted scale-0 group-hover:scale-100 transition rounded-full" />
@@ -44,7 +56,7 @@ export default function IconButton({ icon, onClick, href }: IconButtonProps) {
 		<button
 			onClick={onClick}
 			type="button"
-			className="relative -scale-x-100 h-10 w-10 rounded-full border border-muted duration-300 p-2.5 [&_path]:fill-muted group hover:[&_path]:fill-secondary transition-all cursor-pointer"
+			className="relative h-[3vw] aspect-square rounded-full border border-muted duration-300 p-[0.8vw] [&_path]:fill-muted group hover:[&_path]:fill-secondary transition-all cursor-pointer"
 		>
 			<span className="z-10 relative transition-all duration-300">
 				{iconComponent}

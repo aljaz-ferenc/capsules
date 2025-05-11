@@ -29,7 +29,7 @@ export default function Desert({ scrollYProgress, isActive }: DesertProps) {
 			<AnimatePresence mode="wait">
 				{isActive && (
 					<>
-						<RevealText text="Desert Capsule" />
+						<RevealText text="Desert Capsule®" />
 						<OpenDetailsBtn
 							capsule="desert"
 							sideText={capsulesDetails.desert.description}

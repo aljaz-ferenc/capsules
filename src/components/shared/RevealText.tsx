@@ -4,20 +4,21 @@ type RevealTextProps = {
 	text: string;
 };
 
+const duration = 0.5;
+
 export default function RevealText({ text }: RevealTextProps) {
 	return (
 		<motion.div
 			className="absolute top-1/2 left-7.5 -translate-y-1/2 text-3xl"
-			animate={{ x: 0, transition: { duration: 0.5 } }}
-			initial={{ x: 50, transition: { duration: 0.5 } }}
-			exit={{ x: 50, transition: { duration: 0.5 } }}
+			animate={{ x: 0, transition: { duration } }}
+			initial={{ x: 50, transition: { duration } }}
+			exit={{ x: 50, transition: { duration } }}
 		>
 			{text.split("").map((letter, i) => {
 				return (
 					<motion.span
-						// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-						key={i}
-						className="text-[100px] text-white"
+						key={`letter-${i + 1}`}
+						className="text-[5vw] text-white"
 						animate={{
 							clipPath: "inset(0% 0% 0% 0%)",
 						}}
@@ -27,7 +28,7 @@ export default function RevealText({ text }: RevealTextProps) {
 						exit={{
 							clipPath: "inset(0% 100% 0% 0%)",
 						}}
-						transition={{ duration: 0.5 }}
+						transition={{ duration }}
 					>
 						{letter}
 					</motion.span>
