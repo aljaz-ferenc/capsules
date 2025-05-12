@@ -2,7 +2,7 @@ import { AnimatePresence, motion, useTransform } from "motion/react";
 import type { MotionValue } from "motion";
 // import OpenDetailsBtn from "./OpenDetailsBtn.tsx";
 // import capsulesDetails from "../../data/capsulesDetails.ts";
-import { useState } from "react";
+// import { useState } from "react";
 import RevealText from "../animations/RevealText.tsx";
 
 type DesertProps = {
