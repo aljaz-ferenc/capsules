@@ -16,7 +16,7 @@ export default function RevealSectionTitle({
 	const containerRef = useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: containerRef,
-		offset: ["start center", "end center"],
+		offset: ["end 150%", "end center"],
 	});
 	const y = useTransform(scrollYProgress, [0, 1], [-100, 0]);
 	const clipPath = useTransform(

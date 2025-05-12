@@ -1,7 +1,6 @@
 import Hero from "./components/sections/Hero.tsx";
 import Welcome from "./components/sections/Welcome.tsx";
 import ChooseCapsule from "./components/sections/ChooseCapsule.tsx";
-import Capsules from "./components/sections/Capsules.tsx";
 import Location from "./components/sections/Location.tsx";
 import WhyCapsules from "./components/sections/WhyCapsules.tsx";
 import Activities from "./components/sections/Activities.tsx";
@@ -13,20 +12,16 @@ import MomentumScroll from "./components/shared/MomentumScroll.tsx";
 function App() {
 	return (
 		<MomentumScroll>
-			<main className="bg-background">
-				<BreakpointHelper />
+			<main className="bg-background md:p-[0.4vw]">
 				<ScrollProvider>
 					<Hero />
 					<Welcome />
-					<div className="bg-gradient-to-b from-transparent via-darkBrown to-transparent">
-						<ChooseCapsule />
-						<Capsules />
-					</div>
+					<ChooseCapsule />
 					<Location />
 					<WhyCapsules />
 					<Activities />
 					<Reviews />
-					{/*<Footer />*/}
+					<Footer />
 				</ScrollProvider>
 			</main>
 		</MomentumScroll>
@@ -34,10 +29,3 @@ function App() {
 }
 
 export default App;
-
-//TODO: remove
-function BreakpointHelper() {
-	return (
-		<div className="fixed top-0 h-2 w-full left-0 bg-red-500 z-50 md:bg-blue-500 xl:bg-green-500" />
-	);
-}

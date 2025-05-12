@@ -11,7 +11,7 @@ type InfiniteScrollTextProps = {
 
 export default function InfiniteScrollText({
 	word,
-	duration = 10,
+	duration = 90,
 	fontSize = "11vw",
 	opacity,
 	className = "",

@@ -18,7 +18,7 @@ export default function ProgressBar({
 				animate={{
 					scaleX: progress,
 				}}
-				transition={{ duration: 1, ease: "easeInOut" }}
+				transition={{ duration: 0.5, ease: "easeInOut" }}
 			/>
 		</div>
 	);

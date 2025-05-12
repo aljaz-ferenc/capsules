@@ -21,7 +21,7 @@ export default function FullscreenTitle() {
 				x: inView ? 0 : 200,
 			}}
 		>
-			{"Capsules".split("").map((letter, index) => (
+			{"ChooseCapsuleMobile".split("").map((letter, index) => (
 				<motion.span
 					className="bg-gradient-to-b from-muted to-primary text-transparent bg-clip-text"
 					key={`letter-${index + 1}`}

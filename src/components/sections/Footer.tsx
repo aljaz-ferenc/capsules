@@ -8,7 +8,7 @@ const links: TLink[] = [
 	{ title: "Welcome", scrollToId: "welcome" },
 	{ title: "Introduction", scrollToId: "introduction" },
 	{ title: "Houses", scrollToId: "houses" },
-	{ title: "Why Capsules®", scrollToId: "whyCapsules" },
+	{ title: "Why ChooseCapsuleMobile®", scrollToId: "whyCapsules" },
 	{ title: "Activities", scrollToId: "activities" },
 	{ title: "Feedback", scrollToId: "reviews" },
 ];
