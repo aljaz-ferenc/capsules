@@ -2,7 +2,7 @@ import { use, useState } from "react";
 import { ScrollContext } from "../../state/ScrollContext.tsx";
 import { motion } from "motion/react";
 
-type Link = {
+export type Link = {
 	title: string;
 	scrollToId: string;
 };

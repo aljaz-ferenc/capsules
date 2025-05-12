@@ -7,7 +7,6 @@ import User from "../reviews/User.tsx";
 import ProgressBar from "../shared/ProgressBar.tsx";
 
 export default function Reviews() {
-	const [activeReview, setActiveReview] = useState(0);
 	const reviewsRef = useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: reviewsRef,
@@ -16,6 +15,26 @@ export default function Reviews() {
 
 	const y = useTransform(scrollYProgress, [0, 2], ["0%", "100%"]);
 	const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
+	return (
+		<>
+			<motion.section
+				style={{ y, opacity }}
+				ref={reviewsRef}
+				className="my-[140px] px-[20px] h-screen py-[20px] md:flex flex-col justify-center hidden"
+				id="reviews"
+			>
+				<Content />
+			</motion.section>
+			<section className="my-[140px] px-[20px] h-screen py-[20px] flex flex-col justify-center md:hidden">
+				<Content />
+			</section>
+		</>
+	);
+}
+
+function Content() {
+	const [activeReview, setActiveReview] = useState(0);
 
 	const handlePrev = () => {
 		setActiveReview((prev) => {
@@ -34,14 +53,8 @@ export default function Reviews() {
 			return prev + 1;
 		});
 	};
-
 	return (
-		<motion.section
-			style={{ y, opacity }}
-			ref={reviewsRef}
-			className="my-[140px] px-[20px] h-screen py-[20px] flex flex-col justify-center"
-			id="reviews"
-		>
+		<>
 			<p className="label mb-5">Do people like us?</p>
 			<div className="flex-1">
 				<ReviewSwitchEffect activeReview={activeReview} />
@@ -57,6 +70,6 @@ export default function Reviews() {
 					className="relative h-[1.5px] mb-[34px] mt-5 w-full ml-10"
 				/>
 			</div>
-		</motion.section>
+		</>
 	);
 }

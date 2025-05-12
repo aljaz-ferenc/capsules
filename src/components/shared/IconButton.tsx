@@ -20,8 +20,8 @@ type IconButtonProps = {
 	icon: Icons;
 	onClick?: () => void;
 	href?: string;
-	height?: string;
-	padding?: string;
+	height?: string | number;
+	padding?: string | number;
 };
 
 export default function IconButton({

@@ -1,10 +1,10 @@
 import InfiniteScrollText from "../animations/InfiniteScrollText.tsx";
-import Link from "../footer/Link.tsx";
-import { motion, useInView } from "motion/react";
-import IconButton from "../shared/IconButton.tsx";
-import { useRef } from "react";
+import IconButton, { type Icons } from "../shared/IconButton.tsx";
+import Link, { type Link as TLink } from "../footer/Link.tsx";
+import Banner from "../footer/Banner.tsx";
+import FullscreenTitle from "../footer/FullscreenTitle.tsx";
 
-const links: Link[] = [
+const links: TLink[] = [
 	{ title: "Welcome", scrollToId: "welcome" },
 	{ title: "Introduction", scrollToId: "introduction" },
 	{ title: "Houses", scrollToId: "houses" },
@@ -20,25 +20,10 @@ const socials: { icon: Icons; href: string }[] = [
 	{ icon: "behance", href: "#" },
 ];
 
-const duration = 0.5;
-const delay = 0.3;
-
 export default function Footer() {
-	const titleRef = useRef(null);
-	const inView = useInView(titleRef);
-
 	return (
 		<footer className="mt-[140px]">
-			<div className="px-[10px] w-full h-[413px] relative ">
-				<img
-					src="terrace.webp"
-					alt=""
-					className="h-full object-cover rounded-[30px]"
-				/>
-				<h1 className="section-title absolute top-1/2 left-1/2 -translate-1/2">
-					Capsules
-				</h1>
-			</div>
+			<Banner />
 			<div className="label mt-[100px] mb-[30px] px-[10px]">
 				<p>Interested in an amazing adventure?</p>
 				<p>Reserve one of our Capsules®</p>
@@ -48,12 +33,12 @@ export default function Footer() {
 				opacity={1}
 				word="Book your capsule-"
 			/>
-			<div className="mt-[50px] px-5 text-5">
+			<div className="mt-[50px] px-5 text-[20px] leading-[22px]">
 				{links.map((link) => (
 					<Link key={link.title} link={link} />
 				))}
 			</div>
-			<div className="text-5 text-muted px-5 py-[30px]">
+			<div className="text-[20px] leading-[22px] text-muted px-5 py-[30px]">
 				<p>
 					This website is just a concept work done by-Moyra to showcase our
 					capabilities.
@@ -93,35 +78,7 @@ export default function Footer() {
 					</a>
 				</span>
 			</div>
-			<motion.h1
-				ref={titleRef}
-				className="text-[23.8vw]"
-				transition={{
-					duration: !inView ? 0 : duration,
-					ease: "easeInOut",
-					delay: !inView ? 0 : delay,
-				}}
-				animate={{
-					x: inView ? 0 : 200,
-				}}
-			>
-				{"Capsules".split("").map((letter, index) => (
-					<motion.span
-						className="bg-gradient-to-b from-muted to-primary text-transparent bg-clip-text"
-						key={`letter-${index + 1}`}
-						transition={{
-							duration: !inView ? 0 : duration,
-							ease: "easeInOut",
-							delay: !inView ? 0 : delay,
-						}}
-						animate={{
-							clipPath: inView ? "inset(0% 0% 0% 0%)" : "inset(0% 0% 0% 100%)",
-						}}
-					>
-						{letter}
-					</motion.span>
-				))}
-			</motion.h1>
+			<FullscreenTitle />
 		</footer>
 	);
 }
