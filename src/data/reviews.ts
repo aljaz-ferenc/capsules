@@ -19,7 +19,7 @@ export const reviews: Review[] = [
 		},
 		id: 1,
 		review:
-			"Staying at ChooseCapsuleMobile in the California desert redefined my retreat - modern design meets nature, and every sunset feels like a serene masterpiece.",
+			"Staying at Capsules in the California desert redefined my retreat - modern design meets nature, and every sunset feels like a serene masterpiece.",
 	},
 	{
 		user: {
@@ -29,7 +29,7 @@ export const reviews: Review[] = [
 		},
 		id: 2,
 		review:
-			"ChooseCapsuleMobile offered the perfect escape - modern spaces surrounded by desert stillness. Each moment felt peaceful, grounded, and truly unique.",
+			"Capsules offered the perfect escape - modern spaces surrounded by desert stillness. Each moment felt peaceful, grounded, and truly unique.",
 	},
 	{
 		user: {
@@ -39,6 +39,6 @@ export const reviews: Review[] = [
 		},
 		id: 3,
 		review:
-			"ChooseCapsuleMobile was the perfect desert hideaway - stylish, peaceful, and fully surrounded by stunning views day and night.",
+			"Capsules was the perfect desert hideaway - stylish, peaceful, and fully surrounded by stunning views day and night.",
 	},
 ];

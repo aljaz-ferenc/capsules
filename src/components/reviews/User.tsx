@@ -7,7 +7,7 @@ type UserProps = {
 
 export default function User({ user }: UserProps) {
 	return (
-		<div className="flex gap-4 h-[50px] items-center">
+		<div className="flex gap-4 h-[50px] items-center md:mt-[3vw]">
 			<motion.img
 				initial={{ scale: 0 }}
 				animate={{ scale: 1 }}

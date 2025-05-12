@@ -15,7 +15,7 @@ export default function ReviewSwitchEffect({ activeReview }: TextSwitchProps) {
 						<div key={review.id} className="">
 							<TextSwitchEffect
 								text={review.review}
-								className="main-text-large w-[13ch]"
+								className="main-text-large w-[13ch] md:w-[23ch]"
 							/>
 						</div>
 					);

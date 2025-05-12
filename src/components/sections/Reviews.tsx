@@ -60,14 +60,22 @@ function Content() {
 				<ReviewSwitchEffect activeReview={activeReview} />
 			</div>
 			<User user={reviews[activeReview].user} />
-			<div className="flex justify-between mt-[100px]">
-				<div className="flex gap-[1px]  [&_path]:fill-primary">
-					<IconButton icon="arrow-left" onClick={handlePrev} />
-					<IconButton icon="arrow-right" onClick={handleNext} />
+			<div className="flex justify-between mt-[100px] md:mt-[5vw]">
+				<div className="flex gap-[1px] [&_path]:fill-primary md:gap-[0.3vw]">
+					<IconButton
+						icon="arrow-left"
+						onClick={handlePrev}
+						padding={"0.4vw"}
+					/>
+					<IconButton
+						icon="arrow-right"
+						onClick={handleNext}
+						padding={"0.4vw"}
+					/>
 				</div>
 				<ProgressBar
 					progress={(activeReview + 1) / 3}
-					className="relative h-[1.5px] mb-[34px] mt-5 w-full ml-10"
+					className="relative h-[1.5px] mb-[34px] mt-5 w-full ml-10 md:w-[25vw]"
 				/>
 			</div>
 		</>

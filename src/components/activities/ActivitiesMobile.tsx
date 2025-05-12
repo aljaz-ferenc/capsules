@@ -7,17 +7,14 @@ import ActivitySlide from "./ActivitySlide.tsx";
 
 export default function ActivitiesMobile() {
 	return (
-		<Swiper
-			spaceBetween={0}
-			direction="horizontal"
-			slidesPerView={1.2}
-			className="md:hidden"
-		>
-			{Object.values(activities).map((activity, index) => (
-				<SwiperSlide key={activity.id}>
-					<ActivitySlide activity={activity} index={index} />
-				</SwiperSlide>
-			))}
-		</Swiper>
+		<div className="md:hidden">
+			<Swiper spaceBetween={0} direction="horizontal" slidesPerView={1.2}>
+				{Object.values(activities).map((activity, index) => (
+					<SwiperSlide key={activity.id}>
+						<ActivitySlide activity={activity} index={index} />
+					</SwiperSlide>
+				))}
+			</Swiper>
+		</div>
 	);
 }
