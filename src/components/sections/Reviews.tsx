@@ -21,7 +21,7 @@ export default function Reviews() {
 			<motion.section
 				style={{ y, opacity }}
 				ref={reviewsRef}
-				className="my-[140px] px-[20px] h-screen py-[20px] md:flex flex-col justify-center hidden"
+				className="my-[140px] px-[20px] h-screen py-[20px] md:flex flex-col justify-center hidden md:mt-[20vw]"
 				id="reviews"
 			>
 				<Content />

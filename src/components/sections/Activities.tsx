@@ -2,12 +2,12 @@ import RevealSectionTitle from "../animations/RevealSectionTitle.tsx";
 import { activities } from "../../data/activities.ts";
 import { useInView } from "motion/react";
 import { useRef } from "react";
-import ActivitySlide from "../activities/ActivitySlide.tsx";
-import { Swiper, SwiperSlide } from "swiper/react";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import "swiper/css";
 import ProgressBar from "../shared/ProgressBar.tsx";
+import ActivitiesMobile from "../activities/ActivitiesMobile.tsx";
+import ActivitiesDesktop from "../activities/ActivitiesDesktop.tsx";
 
 export default function Activities() {
 	const activitiesRef = useRef<HTMLDivElement>(null);
@@ -20,7 +20,7 @@ export default function Activities() {
 					title="Discover the desert activities"
 					subtitle="Ready for an adventure?"
 				/>
-				<p className="main-text text-muted">
+				<p className="main-text text-muted mt-[50px]">
 					We want to make sure your stay is exciting and enjoyable. That’s why
 					we offer a variety of activities with different levels of engagement.
 					Whether you seek thrills or tranquility, there’s something for
@@ -48,13 +48,8 @@ export default function Activities() {
 					))}
 				</div>
 			</div>
-			<Swiper spaceBetween={0} direction="horizontal" slidesPerView={1.2}>
-				{Object.values(activities).map((activity, index) => (
-					<SwiperSlide key={activity.id}>
-						<ActivitySlide activity={activity} index={index} />
-					</SwiperSlide>
-				))}
-			</Swiper>
+			<ActivitiesMobile />
+			<ActivitiesDesktop />
 		</section>
 	);
 }
