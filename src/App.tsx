@@ -12,7 +12,7 @@ import MomentumScroll from "./components/shared/MomentumScroll.tsx";
 function App() {
 	return (
 		<MomentumScroll>
-			<main className="bg-background md:p-[0.4vw]">
+			<main className="bg-background">
 				<ScrollProvider>
 					<Hero />
 					<Welcome />
