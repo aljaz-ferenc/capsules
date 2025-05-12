@@ -28,7 +28,9 @@ export default function RevealSectionTitle({
 	return (
 		<div className={cn(["mb-[5vw]", className])} ref={containerRef}>
 			{subtitle && (
-				<span className="label mb-6 inline-block z-20">{subtitle}</span>
+				<span className="label mb-6 inline-block z-20 xl:mb-[4vw]">
+					{subtitle}
+				</span>
 			)}
 			<motion.h2 className="section-title" style={{ y }}>
 				{title.split("").map((letter, i) => (

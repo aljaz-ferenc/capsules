@@ -42,24 +42,40 @@ body {
 	font-size: 23px;
 	line-height: 26px;
 	letter-spacing: -0.2px;
+	@media (width >= 1280px) {
+		font-size: 2.6vw;
+		line-height: 2.8vw;
+	}
 }
 
 .main-text-small {
 	font-size: 14px;
 	line-height: 18px;
 	letter-spacing: -0.2px;
+	@media (width >= 1280px) {
+		font-size: 0.9vw;
+		line-height: 1.4vw;
+	}
 }
 
 .main-text-large {
 	font-size: 35px;
 	line-height: 38px;
 	letter-spacing: -0.2px;
+	@media (width >= 1280px) {
+		font-size: 5vw;
+		line-height: 5vw;
+	}
 }
 
 .section-title {
 	font-size: 55px;
 	line-height: 50px;
 	letter-spacing: -0.2px;
+	@media (width >= 1280px) {
+		font-size: 12vw;
+		line-height: 10.5vw;
+	}
 }
 
 .subtitle {

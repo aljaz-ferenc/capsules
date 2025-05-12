@@ -14,6 +14,7 @@ function App() {
 	return (
 		<MomentumScroll>
 			<main className="bg-background">
+				<BreakpointHelper />
 				<ScrollProvider>
 					<Hero />
 					<Welcome />
@@ -25,7 +26,7 @@ function App() {
 					<WhyCapsules />
 					<Activities />
 					<Reviews />
-					<Footer />
+					{/*<Footer />*/}
 				</ScrollProvider>
 			</main>
 		</MomentumScroll>
@@ -33,3 +34,10 @@ function App() {
 }
 
 export default App;
+
+//TODO: remove
+function BreakpointHelper() {
+	return (
+		<div className="fixed top-0 h-2 w-full left-0 bg-red-500 z-50 md:bg-blue-500 xl:bg-green-500" />
+	);
+}
