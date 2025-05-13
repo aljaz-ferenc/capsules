@@ -22,7 +22,7 @@ export default function WhyCapsulesMobile() {
 			{Object.entries(capsulesData).map(([capsule, data], index) => (
 				<article
 					key={capsule}
-					className="flex flex-col pt-[30px] h-[580px] bg-darkBrown rounded-[30px] overflow-hidden mb-[10px]"
+					className="flex flex-col pt-[30px] h-[580px] bg-darkBrown rounded-[30px] overflow-hidden mb-[10px] justify-between"
 				>
 					<h3 className="main-text text-muted w-[17ch] mb-[140px] px-[10px]">
 						{slidesText[index].main}

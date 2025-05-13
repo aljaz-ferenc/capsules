@@ -19,7 +19,11 @@ export default function ActivitySlide({
 				<div
 					className={cn(["rounded-[30px] h-full overflow-hidden", className])}
 				>
-					<img src={activity.image} alt="" className="h-full object-cover" />
+					<img
+						src={activity.image}
+						alt=""
+						className="h-full w-full object-cover"
+					/>
 				</div>
 				<ItemNumber
 					total={3}

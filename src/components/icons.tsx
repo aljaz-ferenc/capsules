@@ -85,7 +85,7 @@ export function IconClose() {
 export function Logo() {
 	return (
 		<svg
-			className="h-9.5"
+			className="w-[68px]"
 			viewBox="0 0 82 38"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"

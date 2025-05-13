@@ -3,6 +3,7 @@ import { useRef } from "react";
 
 const duration = 0.5;
 const delay = 0.3;
+const text = "Capsules®";
 
 export default function FullscreenTitle() {
 	const titleRef = useRef(null);
@@ -11,7 +12,7 @@ export default function FullscreenTitle() {
 	return (
 		<motion.h1
 			ref={titleRef}
-			className="text-[24.4vw]"
+			className="text-[22vw] relative"
 			transition={{
 				duration: !inView ? 0 : duration,
 				ease: "easeInOut",
@@ -21,7 +22,7 @@ export default function FullscreenTitle() {
 				x: inView ? 0 : 200,
 			}}
 		>
-			{"Capsules".split("").map((letter, index) => (
+			{text.split("").map((letter, index) => (
 				<motion.span
 					className="bg-gradient-to-b from-muted to-primary text-transparent bg-clip-text"
 					key={`letter-${index + 1}`}

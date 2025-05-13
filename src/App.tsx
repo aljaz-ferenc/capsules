@@ -8,12 +8,14 @@ import Reviews from "./components/sections/Reviews.tsx";
 import Footer from "./components/sections/Footer.tsx";
 import { ScrollProvider } from "./state/ScrollContext.tsx";
 import MomentumScroll from "./components/shared/MomentumScroll.tsx";
+import Header from "./components/Header.tsx";
 
 function App() {
 	return (
 		<MomentumScroll>
-			<main className="bg-background">
+			<main className="bg-background relative">
 				<ScrollProvider>
+					<Header />
 					<Hero />
 					<Welcome />
 					<ChooseCapsule />

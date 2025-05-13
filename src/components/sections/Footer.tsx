@@ -2,7 +2,7 @@ import InfiniteScrollText from "../animations/InfiniteScrollText.tsx";
 import IconButton, { type Icons } from "../shared/IconButton.tsx";
 import Link, { type Link as TLink } from "../footer/Link.tsx";
 import Banner from "../footer/Banner.tsx";
-// import FullscreenTitle from "../footer/FullscreenTitle.tsx";
+import FullscreenTitle from "../footer/FullscreenTitle.tsx";
 
 const links: TLink[] = [
 	{ title: "Welcome", scrollToId: "welcome" },
@@ -22,7 +22,7 @@ const socials: { icon: Icons; href: string }[] = [
 
 export default function Footer() {
 	return (
-		<footer className="mt-[140px]">
+		<footer className="mt-[140px] w-screen overflow-hidden">
 			<Banner />
 			<div className="label mt-[100px] mb-[30px] px-[10px] ">
 				<p>Interested in an amazing adventure?</p>
@@ -89,7 +89,7 @@ export default function Footer() {
 					</a>
 				</span>
 			</div>
-			{/*<FullscreenTitle />*/}
+			<FullscreenTitle />
 		</footer>
 	);
 }
