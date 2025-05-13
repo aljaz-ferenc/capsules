@@ -65,12 +65,12 @@ function Content() {
 					<IconButton
 						icon="arrow-left"
 						onClick={handlePrev}
-						padding={"0.4vw"}
+						// padding={"0.4vw"}
 					/>
 					<IconButton
 						icon="arrow-right"
 						onClick={handleNext}
-						padding={"0.4vw"}
+						// padding={"0.4vw"}
 					/>
 				</div>
 				<ProgressBar

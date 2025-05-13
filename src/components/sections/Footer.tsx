@@ -2,7 +2,7 @@ import InfiniteScrollText from "../animations/InfiniteScrollText.tsx";
 import IconButton, { type Icons } from "../shared/IconButton.tsx";
 import Link, { type Link as TLink } from "../footer/Link.tsx";
 import Banner from "../footer/Banner.tsx";
-import FullscreenTitle from "../footer/FullscreenTitle.tsx";
+// import FullscreenTitle from "../footer/FullscreenTitle.tsx";
 
 const links: TLink[] = [
 	{ title: "Welcome", scrollToId: "welcome" },
@@ -89,7 +89,7 @@ export default function Footer() {
 					</a>
 				</span>
 			</div>
-			<FullscreenTitle />
+			{/*<FullscreenTitle />*/}
 		</footer>
 	);
 }

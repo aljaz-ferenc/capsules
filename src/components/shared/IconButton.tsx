@@ -29,7 +29,7 @@ export default function IconButton({
 	onClick,
 	href,
 	height = "44px",
-	padding = "0.8vw",
+	padding = "0",
 }: IconButtonProps) {
 	const iconComponent = useMemo(() => {
 		switch (icon) {
@@ -52,7 +52,7 @@ export default function IconButton({
 		return (
 			<a
 				href={href}
-				className="relative  aspect-square rounded-full border border-muted  [&_path]:fill-muted group hover:[&_path]:fill-secondary transition-all cursor-pointer"
+				className="relative aspect-square rounded-full border border-muted [&_path]:fill-muted group hover:[&_path]:fill-secondary transition-all cursor-pointer"
 				style={{ height, padding }}
 			>
 				<span className="z-10 relative">{iconComponent}</span>
@@ -65,7 +65,7 @@ export default function IconButton({
 		<button
 			onClick={onClick}
 			type="button"
-			className="relative  aspect-square rounded-full border border-muted duration-300  [&_path]:fill-muted group hover:[&_path]:fill-secondary transition-all cursor-pointer"
+			className="relative aspect-square rounded-full border border-muted duration-300 [&_path]:fill-muted group hover:[&_path]:fill-secondary transition-all cursor-pointer"
 			style={{ height, padding }}
 		>
 			<div className="z-10 relative transition-all duration-300 p-2">

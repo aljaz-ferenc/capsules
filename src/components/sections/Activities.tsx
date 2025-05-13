@@ -11,7 +11,7 @@ import ActivitiesDesktop from "../activities/ActivitiesDesktop.tsx";
 
 export default function Activities() {
 	const activitiesRef = useRef<HTMLDivElement>(null);
-	const activitiesInView = useInView(activitiesRef, { margin: "-30%" });
+	const activitiesInView = useInView(activitiesRef);
 
 	return (
 		<section className="mt-20">

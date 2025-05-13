@@ -5,8 +5,9 @@ import {
 	useAnimate,
 	AnimatePresence,
 } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import TextSwitchEffect from "../animations/TextSwitchEffect.tsx";
+import { useLenis } from "lenis/react";
 
 const duration = 1;
 
@@ -15,15 +16,30 @@ export default function WhyCapsulesDesktop() {
 	const { scrollYProgress } = useScroll({ target: scope });
 	const direction = useRef<"forwards" | "backwards">("forwards");
 	const [phase, setPhase] = useState<0 | 1 | 2>(0);
+	const lenis = useLenis();
+
+	const allowScroll = useCallback(() => {
+		if (lenis) {
+			lenis.start();
+		}
+	}, [lenis]);
+
+	const preventScroll = useCallback(() => {
+		if (lenis) {
+			lenis.stop();
+		}
+	}, [lenis]);
 
 	useEffect(() => {
 		const runAnimation = async () => {
 			switch (phase) {
 				case 0: {
+					preventScroll();
 					if (direction.current === "forwards") {
 						animate("#slide2", { x: 0 }, { duration });
 
 						await animate("#slide3", { y: "100%" }, { duration });
+						allowScroll();
 					} else {
 						await animate("#slide3", { zIndex: 0 }, { duration: 0 });
 
@@ -33,11 +49,13 @@ export default function WhyCapsulesDesktop() {
 							{ duration },
 						);
 						animate("#slide2", { x: 0 }, { duration });
-						animate("#slide3", { y: "100%" }, { duration });
+						await animate("#slide3", { y: "100%" }, { duration });
+						allowScroll();
 					}
 					break;
 				}
 				case 1: {
+					preventScroll();
 					if (direction.current === "forwards") {
 						animate("#slide3", { y: "100%" }, { duration: 0 });
 						animate(
@@ -48,15 +66,18 @@ export default function WhyCapsulesDesktop() {
 
 						animate("#slide2", { x: "-100%" }, { duration });
 						await animate("#slide3", { y: "-100%" }, { duration });
+						allowScroll();
 					} else {
 						animate("#slide3", { x: 0 }, { duration });
 
 						await animate("#slide3", { zIndex: 100 }, { duration: 0 });
-						animate("#slide4", { y: "100%" }, { duration });
+						await animate("#slide4", { y: "100%" }, { duration });
+						allowScroll();
 					}
 					break;
 				}
 				case 2: {
+					preventScroll();
 					if (direction.current === "forwards") {
 						animate(
 							"#slide3",
@@ -66,12 +87,13 @@ export default function WhyCapsulesDesktop() {
 
 						animate("#slide4", { y: "-100%" }, { duration });
 						await animate("#slide3", { x: "-100%" }, { duration });
+						allowScroll();
 					}
 				}
 			}
 		};
 		runAnimation();
-	}, [phase, animate]);
+	}, [phase, animate, allowScroll, preventScroll]);
 
 	useMotionValueEvent(scrollYProgress, "change", (latest) => {
 		setPhase((prev) => {
