@@ -9,12 +9,14 @@ import Footer from "./components/sections/Footer.tsx";
 import { ScrollProvider } from "./state/ScrollContext.tsx";
 import MomentumScroll from "./components/shared/MomentumScroll.tsx";
 import Header from "./components/Header.tsx";
+import Menu from "./components/Menu.tsx";
 
 function App() {
 	return (
 		<MomentumScroll>
 			<main className="bg-background relative">
 				<ScrollProvider>
+					<Menu />
 					<Header />
 					<Hero />
 					<Welcome />

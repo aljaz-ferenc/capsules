@@ -16,7 +16,7 @@ export default function Hero() {
 			className="p-[10px] flex flex-col px-[10px] justify-between pt-[50px] pb-[100px] !min-h-screen relative  overflow-hidden rounded-[30px]"
 			id={"welcome"}
 		>
-			<div>
+			<div className="px-[10px]">
 				<TextLogo
 					className={"w-full md:w-[53%] md:z-20 md:absolute md:top-5 md:left-5"}
 				/>
@@ -25,7 +25,7 @@ export default function Hero() {
 				</h2>
 			</div>
 			<div>
-				<p className="max-w-[30ch] mb-[30px] main-text-small md:z-20 md:absolute md:bottom-5 md:right-5 md:mb-0">
+				<p className="px-[10px] max-w-[32ch] mb-[30px] main-text-small md:z-20 md:absolute md:bottom-5 md:right-5 md:mb-0">
 					Spend unforgettable and remarkable time in the Californian desert
 					with-Capsules.
 				</p>

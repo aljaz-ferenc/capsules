@@ -2,6 +2,7 @@ import type { PropsWithChildren, ReactNode } from "react";
 
 type MainButtonProps = {
 	icon: ReactNode;
+	activeText?: string;
 };
 
 export default function MainButton({

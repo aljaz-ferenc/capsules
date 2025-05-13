@@ -83,3 +83,26 @@ body {
 	line-height: 5vw;
 	color: var(--color-primary);
 }
+
+.line {
+	transition: transform 0.3s ease;
+	transform-origin: center;
+	transform-box: fill-box;
+}
+
+.top,
+.bottom {
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.top.active {
+	transform: translate(0px, 5px) rotate(45deg);
+}
+
+.bottom.active {
+	transform: translate(0px, -5px) rotate(-45deg);
+}
+
+.middle.active {
+	opacity: 0;
+}

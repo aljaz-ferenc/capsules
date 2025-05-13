@@ -1,4 +1,5 @@
 import { cn } from "../utils/utils.ts";
+import { motion } from "motion/react";
 
 export function IconRight() {
 	return (
@@ -239,12 +240,13 @@ export function IconPlus() {
 	);
 }
 
-export function IconHamburger() {
+export function IconHamburger({ isActive = false }: { isActive?: boolean }) {
 	return (
 		<svg viewBox="0 0 22 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<title>menu</title>
-			<g transform="translate(0, 8)">
+			<g transform="translate(0,5)">
 				<g
+					className={cn(["top line", isActive && "active"])}
 					data-svg-origin="11.000000655651093 1"
 					transform="matrix(1,0,0,1,0,0)"
 				>
@@ -257,6 +259,19 @@ export function IconHamburger() {
 				</g>
 				<g>
 					<rect
+						className={cn(["middle line", isActive && "active"])}
+						width="100%"
+						height="2"
+						transform="matrix(-1 0 0 1 22 5)"
+						fill="rgba(177, 166, 150, 1)"
+					/>
+				</g>
+				<g>
+					<rect
+						className={cn([
+							"transition duration-300",
+							isActive && "opacity-0 ",
+						])}
 						width="100%"
 						height="2"
 						transform="matrix(-1 0 0 1 22 5)"
@@ -264,8 +279,8 @@ export function IconHamburger() {
 					/>
 				</g>
 				<g
+					className={cn(["bottom line", isActive && "active"])}
 					data-svg-origin="11.000000655651093 11"
-					transform="matrix(1,0,0,1,0,0)"
 				>
 					<rect
 						width="100%"
