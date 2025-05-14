@@ -1,5 +1,4 @@
 import { cn } from "../utils/utils.ts";
-import { motion } from "motion/react";
 
 export function IconRight() {
 	return (
