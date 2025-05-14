@@ -6,17 +6,26 @@ import WhyCapsules from "./components/sections/WhyCapsules.tsx";
 import Activities from "./components/sections/Activities.tsx";
 import Reviews from "./components/sections/Reviews.tsx";
 import Footer from "./components/sections/Footer.tsx";
-import { ScrollProvider } from "./state/ScrollContext.tsx";
+import { ScrollContext } from "./state/ScrollContext.tsx";
 import MomentumScroll from "./components/shared/MomentumScroll.tsx";
 import Header from "./components/Header.tsx";
-import Menu from "./components/Menu.tsx";
+import Menu from "./components/menu/Menu.tsx";
+import { motion } from "motion/react";
+import { use } from "react";
 
 function App() {
+	const { isScrolling, setIsScrolling } = use(ScrollContext);
+	if (!setIsScrolling) return;
+
 	return (
 		<MomentumScroll>
 			<main className="bg-background relative">
-				<ScrollProvider>
-					<Menu />
+				<Menu />
+				<motion.div
+					animate={{ opacity: isScrolling ? 0 : 1 }}
+					onAnimationComplete={() => setIsScrolling(false)}
+					transition={{ duration: 0.5 }}
+				>
 					<Header />
 					<Hero />
 					<Welcome />
@@ -26,7 +35,7 @@ function App() {
 					<Activities />
 					<Reviews />
 					<Footer />
-				</ScrollProvider>
+				</motion.div>
 			</main>
 		</MomentumScroll>
 	);

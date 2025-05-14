@@ -117,11 +117,7 @@ export default function WhyCapsulesDesktop() {
 	});
 
 	return (
-		<div
-			ref={scope}
-			className="h-[300vh] relative mb-50 hidden md:block"
-			id="whyCapsules"
-		>
+		<div ref={scope} className="h-[300vh] relative mb-50 hidden md:block">
 			<div className="sticky top-0 flex [&_>div]:rounded-[60px] [&_>div]:overflow-hidden">
 				<div
 					className="h-screen w-1/2 bg-secondary z-0 px-5 py-8 relative"

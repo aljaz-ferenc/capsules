@@ -22,11 +22,13 @@ export default function Reviews() {
 				style={{ y, opacity }}
 				ref={reviewsRef}
 				className="my-[140px] px-[20px] h-screen py-[20px] md:flex flex-col justify-center hidden md:mt-[20vw]"
-				id="reviews"
 			>
 				<Content />
 			</motion.section>
-			<section className="my-[140px] px-[20px] h-screen py-[20px] flex flex-col justify-center md:hidden">
+			<section
+				id="reviews"
+				className="my-[140px] px-[20px] h-screen py-[20px] flex flex-col justify-center md:hidden"
+			>
 				<Content />
 			</section>
 		</>

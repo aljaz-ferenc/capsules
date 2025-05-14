@@ -1,24 +1,9 @@
 import InfiniteScrollText from "../animations/InfiniteScrollText.tsx";
-import IconButton, { type Icons } from "../shared/IconButton.tsx";
-import Link, { type Link as TLink } from "../footer/Link.tsx";
+import Link from "../footer/Link.tsx";
 import Banner from "../footer/Banner.tsx";
 import FullscreenTitle from "../footer/FullscreenTitle.tsx";
-
-const links: TLink[] = [
-	{ title: "Welcome", scrollToId: "welcome" },
-	{ title: "Introduction", scrollToId: "introduction" },
-	{ title: "Houses", scrollToId: "houses" },
-	{ title: "Why ChooseCapsuleMobile®", scrollToId: "whyCapsules" },
-	{ title: "Activities", scrollToId: "activities" },
-	{ title: "Feedback", scrollToId: "reviews" },
-];
-
-const socials: { icon: Icons; href: string }[] = [
-	{ icon: "instagram", href: "#" },
-	{ icon: "linkedIn", href: "#" },
-	{ icon: "dribble", href: "#" },
-	{ icon: "behance", href: "#" },
-];
+import SocialLinks from "../shared/SocialLinks.tsx";
+import { links } from "../constants/links.ts";
 
 export default function Footer() {
 	return (
@@ -36,7 +21,7 @@ export default function Footer() {
 			<div className="md:flex md:flex-row-reverse md:justify-between md:items-center md:leading-[2.2vw] md:text-[1.9vw] text-[20px] leading-[22px] md:mt-[4vw]">
 				<div className="mt-[50px] px-5 md:mt-0">
 					{links.map((link) => (
-						<Link key={link.title} link={link} />
+						<Link key={link.title} link={link} animate />
 					))}
 				</div>
 				<div className=" text-muted px-5 py-[30px] md:py-0 md:w-[27ch]">
@@ -55,16 +40,7 @@ export default function Footer() {
 			</div>
 
 			<div className="flex justify-between items-center pb-[50px] md:mt-[7vw] mt-3 px-5">
-				<div className="flex justify-start items-center">
-					{socials.map((icon) => (
-						<IconButton
-							height={54}
-							padding={7}
-							key={icon.icon}
-							icon={icon.icon}
-						/>
-					))}
-				</div>
+				<SocialLinks />
 				<p className="label text-right hidden md:block text-muted w-[25ch]">
 					Meet Capsules®—modern and cozy houses, in the California desert.
 				</p>

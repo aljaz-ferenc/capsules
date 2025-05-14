@@ -14,7 +14,7 @@ export default function Welcome() {
 	);
 
 	return (
-		<section className="px-[20px] py-[80px] md:py-[15vw]">
+		<section className="px-[20px] py-[80px] md:py-[15vw]" id="introduction">
 			<div className="relative mb-[6vw]">
 				<motion.div
 					className="bg-background absolute inset-0 opacity-90"

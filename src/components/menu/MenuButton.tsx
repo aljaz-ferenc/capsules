@@ -1,23 +1,13 @@
-import { IconHamburger } from "./icons.tsx";
-import { type Dispatch, type SetStateAction, useState } from "react";
+import type { Dispatch, SetStateAction } from "react";
 import { motion } from "motion/react";
-
-export default function Menu() {
-	const [isOpen, setIsOpen] = useState(false);
-
-	return (
-		<div className="fixed left-1/2 -translate-x-1/2 bottom-8 z-40">
-			<MenuButton isActive={isOpen} setIsOpen={setIsOpen} />
-		</div>
-	);
-}
+import { IconHamburger } from "../icons.tsx";
 
 type MenuButtonProps = {
 	isActive: boolean;
 	setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
 
-function MenuButton({ isActive, setIsOpen }: MenuButtonProps) {
+export default function MenuButton({ isActive, setIsOpen }: MenuButtonProps) {
 	return (
 		<button
 			type="button"

@@ -4,7 +4,7 @@ import WhyCapsulesDesktop from "../why-capsules/WhyCapsulesDesktop.tsx";
 
 export default function WhyCapsules() {
 	return (
-		<section className="pb-20">
+		<section className="pb-20" id="whyCapsules">
 			<p className="label w-[24ch] px-5">
 				Want to learn more about the benefits of—Capsules®?
 			</p>

@@ -14,7 +14,7 @@ export default function Activities() {
 	const activitiesInView = useInView(activitiesRef);
 
 	return (
-		<section className="mt-20">
+		<section className="mt-20" id="activities">
 			<div className="px-5">
 				<RevealSectionTitle
 					title="Discover the desert activities"

@@ -2,7 +2,7 @@ import RevealSectionTitle from "../animations/RevealSectionTitle.tsx";
 
 export default function ChooseCapsuleMobile() {
 	return (
-		<section className="px-5 mb-[50px] xl:hidden">
+		<section className="px-5 mb-[50px] xl:hidden" id="houses">
 			<RevealSectionTitle
 				title="Choose the one you like best"
 				subtitle="Discover available ChooseCapsuleMobile®"

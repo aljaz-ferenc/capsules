@@ -5,7 +5,10 @@ import ChooseCapsuleMobile from "./ChooseCapsuleMobile.tsx";
 export default function ChooseCapsule() {
 	return (
 		<>
-			<section className="px-5 mb-[50px] bg-gradient-to-b from-transparent via-darkBrown to-transparent">
+			<section
+				id="houses"
+				className="px-5 mb-[50px] bg-gradient-to-b from-transparent via-darkBrown to-transparent"
+			>
 				<RevealSectionTitle
 					title="Choose the one you like best"
 					subtitle="Discover available ChooseCapsuleMobile®"
