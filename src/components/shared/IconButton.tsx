@@ -7,6 +7,7 @@ import {
 	IconLinkedIn,
 	IconRight,
 } from "../icons.tsx";
+import { cn } from "../../utils/utils.ts";
 
 export type Icons =
 	| "linkedIn"
@@ -22,6 +23,7 @@ type IconButtonProps = {
 	href?: string;
 	height?: string | number;
 	padding?: string | number;
+	className?: string;
 };
 
 export default function IconButton({
@@ -30,6 +32,7 @@ export default function IconButton({
 	href,
 	height = "44px",
 	padding = "0",
+	className = "",
 }: IconButtonProps) {
 	const iconComponent = useMemo(() => {
 		switch (icon) {
@@ -52,7 +55,10 @@ export default function IconButton({
 		return (
 			<a
 				href={href}
-				className="relative aspect-square rounded-full border border-muted [&_path]:fill-muted group hover:[&_path]:fill-secondary transition-all cursor-pointer"
+				className={cn([
+					"relative aspect-square rounded-full border border-muted [&_path]:fill-muted group hover:[&_path]:fill-secondary transition-all cursor-pointer",
+					className,
+				])}
 				style={{ height, padding }}
 			>
 				<span className="z-10 relative">{iconComponent}</span>
@@ -65,7 +71,10 @@ export default function IconButton({
 		<button
 			onClick={onClick}
 			type="button"
-			className="relative aspect-square rounded-full border border-muted duration-300 [&_path]:fill-muted group hover:[&_path]:fill-secondary transition-all cursor-pointer"
+			className={cn([
+				"relative aspect-square rounded-full border border-muted duration-300 [&_path]:fill-muted group hover:[&_path]:fill-secondary transition-all cursor-pointer",
+				className,
+			])}
 			style={{ height, padding }}
 		>
 			<div className="z-10 relative transition-all duration-300 p-2">

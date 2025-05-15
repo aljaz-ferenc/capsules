@@ -16,7 +16,13 @@ export default function SocialLinks({ className = "" }: SocialLinksProps) {
 	return (
 		<div className={cn("flex justify-start items-center", className)}>
 			{socials.map((icon) => (
-				<IconButton height={54} padding={7} key={icon.icon} icon={icon.icon} />
+				<IconButton
+					height={54}
+					padding={7}
+					key={icon.icon}
+					icon={icon.icon}
+					className="socialBtn "
+				/>
 			))}
 		</div>
 	);
