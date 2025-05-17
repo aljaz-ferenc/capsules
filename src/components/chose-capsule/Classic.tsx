@@ -1,10 +1,6 @@
 import { AnimatePresence, motion, useTransform } from "motion/react";
 import type { MotionValue } from "motion";
-// import { useState } from "react";
-// import OpenDetailsBtn from "./OpenDetailsBtn.tsx";
-// import capsulesDetails from "../../data/capsulesDetails.ts";
 import RevealText from "../animations/RevealText.tsx";
-import CapsuleDetails from "../shared/CapsuleDetails.tsx";
 
 type ClassicProps = {
 	scrollYProgress: MotionValue<number>;
@@ -24,7 +20,6 @@ export default function Classic({ scrollYProgress, isActive }: ClassicProps) {
 		["brightness(1)", "brightness(0.3)"],
 	);
 	const borderRadius = useTransform(scrollYProgress, [0, 0.2], ["15vw", "3vw"]);
-	// const [detailsIsOpen, setDetailsIsOpen] = useState(false);
 
 	return (
 		<motion.div
