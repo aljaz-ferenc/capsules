@@ -1,7 +1,8 @@
 import { IconPlus } from "../icons.tsx";
 import type capsulesData from "../../data/capsulesData.ts";
-import { type Dispatch, type SetStateAction, useEffect } from "react";
+import { type Dispatch, type SetStateAction, use, useEffect } from "react";
 import { useAnimate, usePresence } from "motion/react";
+import { ReserveModalContext } from "../../state/ReserveModalContext.tsx";
 
 type CapsuleDetailsProps = {
 	data: (typeof capsulesData)["classic"];
@@ -14,6 +15,7 @@ export default function CapsuleDetails({
 }: CapsuleDetailsProps) {
 	const [isPresent, safeToRemove] = usePresence();
 	const [scope, animate] = useAnimate();
+	const { setReserveModalIsOpen } = use(ReserveModalContext);
 
 	useEffect(() => {
 		if (isPresent) {
@@ -78,6 +80,10 @@ export default function CapsuleDetails({
 					<button
 						type="button"
 						className="label text-muted underline mt-[18px]"
+						onClick={() => {
+							setIsOpen(false);
+							setReserveModalIsOpen?.(true);
+						}}
 					>
 						Ready to reserve?
 					</button>

@@ -1,10 +1,14 @@
 import { IconUp, Logo } from "./icons.tsx";
 import MainButton from "./shared/MainButton.tsx";
 import { useScroll, motion, useMotionValueEvent } from "motion/react";
-import { useState } from "react";
+import { type Dispatch, type SetStateAction, useState } from "react";
 import useScrollDirection from "../hooks/useScrollDirection.ts";
 
-export default function Header() {
+type HeaderProps = {
+	setReserveModalIsOpen: Dispatch<SetStateAction<boolean>> | null;
+};
+
+export default function Header({ setReserveModalIsOpen }: HeaderProps) {
 	const { scrollY } = useScroll();
 	const [showHeader, setShowHeader] = useState(false);
 	const { direction } = useScrollDirection();
@@ -20,7 +24,7 @@ export default function Header() {
 				opacity: !showHeader && innerWidth < 768 ? 0 : 1,
 			}}
 			transition={{ duration: 0.5, ease: "easeInOut" }}
-			className="fixed left-0 w-full px-5 pt-[15px] flex justify-between z-50 items-center"
+			className="fixed left-0 w-full px-5 pt-[15px] flex justify-between z-40 items-center"
 		>
 			<motion.div
 				animate={{ opacity: showHeader ? 1 : 0 }}
@@ -28,7 +32,12 @@ export default function Header() {
 			>
 				<Logo />
 			</motion.div>
-			<MainButton icon={<IconUp />}>Reserve</MainButton>
+			<MainButton
+				onClick={() => setReserveModalIsOpen?.(true)}
+				icon={<IconUp />}
+			>
+				Reserve
+			</MainButton>
 		</motion.header>
 	);
 }

@@ -10,23 +10,31 @@ import { ScrollContext } from "./state/ScrollContext.tsx";
 import MomentumScroll from "./components/shared/MomentumScroll.tsx";
 import Header from "./components/Header.tsx";
 import Menu from "./components/menu/Menu.tsx";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { use } from "react";
+import ReserveModal from "./components/ReserveModal.tsx";
+import { ReserveModalContext } from "./state/ReserveModalContext.tsx";
 
 function App() {
 	const { isScrolling, setIsScrolling } = use(ScrollContext);
+	const { setReserveModalIsOpen, reserveModalIsOpen } =
+		use(ReserveModalContext);
+
 	if (!setIsScrolling) return;
 
 	return (
 		<MomentumScroll>
 			<main className="bg-background relative">
-				<Menu />
+				<Menu setReserveModalIsOpen={setReserveModalIsOpen} />
 				<motion.div
 					animate={{ opacity: isScrolling ? 0 : 1 }}
 					onAnimationComplete={() => setIsScrolling(false)}
 					transition={{ duration: 0.5 }}
 				>
-					<Header />
+					<AnimatePresence>
+						{reserveModalIsOpen && <ReserveModal />}
+					</AnimatePresence>
+					<Header setReserveModalIsOpen={setReserveModalIsOpen} />
 					<Hero />
 					<Welcome />
 					<ChooseCapsule />

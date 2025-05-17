@@ -2,6 +2,7 @@ import type { PropsWithChildren, ReactNode } from "react";
 import type React from "react";
 import ReactQueryProvider from "./ReactQueryProvider.tsx";
 import { ScrollProvider } from "../state/ScrollContext.tsx";
+import { ReserveModalProvider } from "../state/ReserveModalContext.tsx";
 
 type ProviderProps = {} & PropsWithChildren;
 
@@ -23,7 +24,11 @@ const composeProviders = (providers: React.FC<{ children: ReactNode }>[]) => {
 	});
 };
 
-const Providers = composeProviders([ReactQueryProvider, ScrollProvider]);
+const Providers = composeProviders([
+	ReactQueryProvider,
+	ScrollProvider,
+	ReserveModalProvider,
+]);
 
 export default function Provider({ children }: ProviderProps) {
 	return <Providers>{children}</Providers>;

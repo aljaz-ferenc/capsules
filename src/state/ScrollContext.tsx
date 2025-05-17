@@ -6,12 +6,12 @@ import {
 	useState,
 } from "react";
 
-type ScrollContext = {
+type ScrollContextType = {
 	isScrolling: boolean;
 	setIsScrolling: Dispatch<SetStateAction<boolean>> | null;
 };
 
-export const ScrollContext = createContext<ScrollContext>({
+export const ScrollContext = createContext<ScrollContextType>({
 	isScrolling: false,
 	setIsScrolling: null,
 });

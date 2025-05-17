@@ -32,7 +32,6 @@ export default function Link({
 			setIsScrolling(true);
 		}
 		setTimeout(() => {
-			console.log(sectionId);
 			document.body.querySelector(`#${sectionId}`)?.scrollIntoView();
 		}, 1000);
 	};
@@ -41,7 +40,9 @@ export default function Link({
 		<button
 			type="button"
 			onClick={() => {
-				handleScrollToSection(link.scrollToId);
+				if (link.title !== "Reserve") {
+					handleScrollToSection(link.scrollToId);
+				}
 				onClick?.();
 			}}
 			className={cn([

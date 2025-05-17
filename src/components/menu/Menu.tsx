@@ -8,7 +8,11 @@ import { links } from "../constants/links.ts";
 import Link from "../footer/Link.tsx";
 import { cn } from "../../utils/utils.ts";
 
-export default function Menu() {
+type MenuProps = {
+	setReserveModalIsOpen: Dispatch<SetStateAction<boolean>> | null;
+};
+
+export default function Menu({ setReserveModalIsOpen }: MenuProps) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
@@ -19,7 +23,10 @@ export default function Menu() {
 			<AnimatePresence>
 				{isOpen && (
 					<div className={cn(["fixed inset-[10px] z-40"])}>
-						<MenuContent setIsOpen={setIsOpen} />
+						<MenuContent
+							setReserveModalIsOpen={setReserveModalIsOpen}
+							setIsOpen={setIsOpen}
+						/>
 					</div>
 				)}
 			</AnimatePresence>
@@ -29,9 +36,10 @@ export default function Menu() {
 
 type MenuContentProps = {
 	setIsOpen: Dispatch<SetStateAction<boolean>>;
+	setReserveModalIsOpen: Dispatch<SetStateAction<boolean>> | null;
 };
 
-function MenuContent({ setIsOpen }: MenuContentProps) {
+function MenuContent({ setIsOpen, setReserveModalIsOpen }: MenuContentProps) {
 	const [isPresent, safeToRemove] = usePresence();
 	const [scope, animate] = useAnimate<HTMLDivElement>();
 
@@ -122,11 +130,15 @@ function MenuContent({ setIsOpen }: MenuContentProps) {
 			/>
 			<div className="flex flex-col pt-10 md:pt-0 h-full md:grid md:grid-cols-auto">
 				<div className="px-[20px] md:col-1 md:pt-10">
-					{/*TODO: handle Reserve link click*/}
 					{[...links, { title: "Reserve", scrollToId: "welcome" }].map(
 						(link) => (
 							<Link
-								onClick={() => setIsOpen(false)}
+								onClick={() => {
+									setIsOpen(false);
+									if (link.title === "Reserve") {
+										setReserveModalIsOpen?.(true);
+									}
+								}}
 								animate={false}
 								link={link}
 								key={link.title}
