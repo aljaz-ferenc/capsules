@@ -4,6 +4,7 @@ import type { MotionValue } from "motion";
 // import OpenDetailsBtn from "./OpenDetailsBtn.tsx";
 // import capsulesDetails from "../../data/capsulesDetails.ts";
 import RevealText from "../animations/RevealText.tsx";
+import CapsuleDetails from "../shared/CapsuleDetails.tsx";
 
 type ClassicProps = {
 	scrollYProgress: MotionValue<number>;

@@ -22,6 +22,7 @@ body {
 	--muted: #b1a696;
 	--background: #181717;
 	--darkBrown: #332e2b;
+	--lightBrown: #b1a696;
 }
 
 @theme inline {
@@ -30,6 +31,7 @@ body {
 	--color-muted: var(--muted);
 	--color-background: var(--background);
 	--color-darkBrown: var(--darkBrown);
+	--color-lightBrown: var(--lightBrown);
 }
 
 .label {

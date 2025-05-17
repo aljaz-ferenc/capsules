@@ -4,7 +4,7 @@ import ItemNumber from "../shared/ItemNumber.tsx";
 const slidesText = [
 	{
 		main: "Enjoy the view through-the wide panoramic glass window",
-		sub: "Spend unforgettable and remarkable time in the Californian desert with—ChooseCapsuleMobile.",
+		sub: "Spend unforgettable and remarkable time in the Californian desert withCapsules.",
 	},
 	{
 		main: "Sound of silence-out of the city rush with complete privacy",

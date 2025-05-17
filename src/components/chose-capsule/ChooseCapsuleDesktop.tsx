@@ -62,7 +62,7 @@ export default function ChooseCapsuleDesktop() {
 					</motion.div>
 					<InfiniteScrollText
 						className="absolute top-1/2 right-0 overflow-hidden -translate-y-1/2"
-						word="ChooseCapsuleMobile"
+						word="Capsules"
 						duration={50}
 						opacity={showInfiniteText ? 1 : 0}
 					/>

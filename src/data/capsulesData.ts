@@ -12,6 +12,7 @@ export default {
 			{ label: "Jacuzzi", value: "Available" },
 			{ label: "Terrace", value: "None" },
 		],
+		image: "classic.webp",
 	},
 	terrace: {
 		title: "Terrace Capsule®",
@@ -26,6 +27,7 @@ export default {
 			{ label: "Jacuzzi", value: "Available" },
 			{ label: "Terrace", value: "Available" },
 		],
+		image: "terrace.webp",
 	},
 	desert: {
 		title: "Desert Capsule®",
@@ -40,5 +42,6 @@ export default {
 			{ label: "Jacuzzi", value: "Available" },
 			{ label: "Terrace", value: "None" },
 		],
+		image: "desert.webp",
 	},
 };

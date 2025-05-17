@@ -11,7 +11,7 @@ export default function ChooseCapsule() {
 			>
 				<RevealSectionTitle
 					title="Choose the one you like best"
-					subtitle="Discover available ChooseCapsuleMobile®"
+					subtitle="Discover available Capsules®"
 				/>
 				<div className="flex flex-col md:flex-row md:items-center mb-[60px]">
 					<p className="main-text text-muted mt-5 md:w-1/2 md:pr-[5vw] md:mt-0">
@@ -21,7 +21,7 @@ export default function ChooseCapsule() {
 					</p>
 					<div className="flex flex-col justrify-between h-full md:w-1/2">
 						<p className="label mt-[50px] w-[25ch] md:mt-0">
-							All ChooseCapsuleMobile® houses—are built based on the same rules:
+							All Capsules® houses—are built based on the same rules:
 						</p>
 						<div className="flex flex-wrap gap-[7px] mt-[30px]">
 							{[

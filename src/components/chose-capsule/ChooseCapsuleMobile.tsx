@@ -5,7 +5,7 @@ export default function ChooseCapsuleMobile() {
 		<section className="px-5 mb-[50px] xl:hidden" id="houses">
 			<RevealSectionTitle
 				title="Choose the one you like best"
-				subtitle="Discover available ChooseCapsuleMobile®"
+				subtitle="Discover available Capsules®"
 			/>
 			<div className="flex flex-col xl:flex-row xl:items-center">
 				<p className="main-text text-muted mt-5 xl:w-1/2 xl:pr-[5vw] xl:mt-0">
@@ -15,7 +15,7 @@ export default function ChooseCapsuleMobile() {
 				</p>
 				<div className="flex flex-col justrify-between h-full xl:w-1/2">
 					<p className="label mt-[50px] w-[25ch] xl:mt-0">
-						All ChooseCapsuleMobile® houses—are built based on the same rules:
+						All Capsules® houses—are built based on the same rules:
 					</p>
 					<div className="flex flex-wrap gap-[7px] mt-[30px]">
 						{[

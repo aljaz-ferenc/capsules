@@ -5,6 +5,7 @@ import {
 	IconInstagram,
 	IconLeft,
 	IconLinkedIn,
+	IconPlus,
 	IconRight,
 } from "../icons.tsx";
 import { cn } from "../../utils/utils.ts";
@@ -15,7 +16,8 @@ export type Icons =
 	| "dribble"
 	| "behance"
 	| "arrow-right"
-	| "arrow-left";
+	| "arrow-left"
+	| "plus";
 
 type IconButtonProps = {
 	icon: Icons;
@@ -48,6 +50,8 @@ export default function IconButton({
 				return <IconLeft />;
 			case "arrow-right":
 				return <IconRight />;
+			case "plus":
+				return <IconPlus />;
 		}
 	}, [icon]);
 
