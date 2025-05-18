@@ -18,11 +18,29 @@ export default function ReserveModal() {
 		if (isPresent) {
 			const enterAnimation = async () => {
 				await animate(scope.current, { opacity: 1 }, { duration: 0.5 });
+
+				if (innerWidth > 768) {
+					animate("#background", { width: "30vw" }, { duration: 0.5 });
+					await animate("#closeBtn", { opacity: 1 }, { duration: 0.5 });
+					await animate(
+						"#footer",
+						{ width: "100%", opacity: 1 },
+						{ duration: 0.5 },
+					);
+					await animate(".content", { opacity: 1 }, { duration: 0.5 });
+				}
 			};
 			enterAnimation();
 		} else {
 			const exitAnimation = async () => {
+				if (innerWidth > 768) {
+					await animate(".content", { opacity: 0 }, { duration: 0.5 });
+					await animate("#footer", { width: 0, opacity: 0 }, { duration: 0.5 });
+					animate("#background", { width: "0vw" }, { duration: 0.5 });
+					await animate("#closeBtn", { opacity: 0 }, { duration: 0.5 });
+				}
 				await animate(scope.current, { opacity: 0 }, { duration: 0.5 });
+
 				safeToRemove();
 			};
 			exitAnimation();
@@ -31,19 +49,24 @@ export default function ReserveModal() {
 
 	return (
 		<div
-			className="fixed inset-0 p-[10px] z-50 bg-[#181717] opacity-0 md:p-[0.5vw]"
+			className="fixed inset-0 p-[10px] z-50 bg-[#181717]/90 md:p-[0.5vw] opacity-0"
 			ref={scope}
 		>
-			<div className="h-[calc(100vh-20px)] overflow-y-scroll rounded-[30px] md:ml-auto md:w-[30vw] md:rounded-[40px]">
+			<div
+				id="background"
+				className="h-[calc(100vh-20px)] overflow-y-scroll rounded-[30px] md:ml-auto md:w-0 md:rounded-[40px]"
+			>
 				<div className="px-5 bg-darkBrown pb-[140px] pt-[80px] md:h-full md:flex md:flex-col md:justify-start md:pb-[0.5vw] md:px-[0.5vw] md:pt-0">
 					<button
 						type="button"
 						onClick={() => setReserveModalIsOpen?.(false)}
-						className="w-[52px] h-[52px] mt-2.5 rotate-45 [&_rect]:fill-white bg-[#181717] rounded-full grid place-items-center fixed top-4 left-[30px] md:static md:mx-[1.5vw] md:h-[2.8vw] md:w-[2.8vw] md:mt-[15px]"
+						id="closeBtn"
+						className="cursor-pointer w-[52px] h-[52px] mt-2.5 rotate-45 group hover:[&_rect]:fill-[#181717] [&_rect]:transition-all [&_rect]:duration-300 [&_rect]:fill-white overflow-hidden bg-[#181717] rounded-full grid place-items-center fixed top-4 left-[30px] md:static md:mx-[1.5vw] md:h-[2.8vw] md:w-[2.8vw] md:mt-[15px] md:opacity-0"
 					>
 						<IconPlus />
+						<div className="absolute inset-0 bg-primary scale-0 group-hover:scale-100 transition duration-300 rounded-full" />
 					</button>
-					<div className="md:px-[1.5vw]">
+					<div className="md:px-[1.5vw] md:opacity-0 content">
 						<h3 className="main-text mt-[20px] md:!text-[2vw] md:!leading-[2.2vw] md:w-[15ch]">
 							Make it memorable and reserve one of our-Capsules®
 						</h3>
@@ -98,8 +121,11 @@ export default function ReserveModal() {
 							))}
 						</div>
 					</div>
-					<div className="label overflow-hidden rounded-[24px] bg-[#181717] w-[calc(100%-40px)] h-[72px] left-5 fixed bottom-5 md:rounded-full flex justify-between items-center px-6 md:static md:w-full md:mt-auto md:pr-[0.7vw] md:px-[2vw] md:h-[5.5vw]">
-						<div className="flex w-full items-center md:!text-[0.95vw] md:!leading-[1.2vw]">
+					<div
+						id="footer"
+						className="label overflow-hidden rounded-[24px] md:opacity-0 bg-[#181717] w-[calc(100%-40px)] h-[72px] left-5 fixed bottom-5 md:rounded-full flex justify-between items-center px-6 md:static md:w-0 md:mt-auto md:pr-[0.7vw] md:px-[2vw] md:h-[5.5vw]"
+					>
+						<div className="flex w-full items-center md:!text-[0.95vw] md:!leading-[1.2vw] content md:opacity-0">
 							<div className="flex flex-col">
 								<span className="text-muted">Stay</span>
 								<span>17.05 - 22.05</span>

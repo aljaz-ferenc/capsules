@@ -21,7 +21,7 @@ export default function SocialLinks({ className = "" }: SocialLinksProps) {
 					padding={7}
 					key={icon.icon}
 					icon={icon.icon}
-					className="socialBtn "
+					className="socialBtn hover:[&_path]:!fill-[#181717] duration-300 transition"
 				/>
 			))}
 		</div>
