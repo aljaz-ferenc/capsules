@@ -143,19 +143,19 @@ function MenuContent({ setIsOpen, setReserveModalIsOpen }: MenuContentProps) {
 								link={link}
 								key={link.title}
 								globalScroll={false}
-								className="link [clip-path:inset(0%_0%_100%_0%)] main-text-large text-muted md:hover:text-white hover:transition md:!text-[120px] text-left md:!leading-[120px]"
+								className="link [clip-path:inset(0%_0%_100%_0%)] main-text-large text-muted md:hover:text-white hover:transition md:!text-[125px] text-left md:!leading-[120px] md:mb-5"
 							/>
 						),
 					)}
 				</div>
 				<div
-					className="flex flex-col justify-end h-full opacity-0 md:col-1 md:row-2 md:items-end md:flex-row-reverse"
+					className="flex flex-col justify-end h-full opacity-0 md:col-1 md:row-2 md:items-center md:flex-row-reverse"
 					id="bottom"
 				>
-					<p className="main-text-small py-[30px] max-w-[30ch] px-[20px]">
+					<p className="main-text-small py-[30px] max-w-[30ch] px-[20px] ">
 						Meet Capsules®—modern and cozy houses, in the California desert.
 					</p>
-					<SocialLinks className="mb-10 px-[20px] [&_path]:!fill-primary" />
+					<SocialLinks className="mb-10 px-[20px] [&_path]:!fill-primary md:mb-0" />
 				</div>
 				<div
 					className="max-h-[300px] h-full rounded-[30px] overflow-hidden relative md:col-2 md:row-span-2 md:h-full md:max-h-none md:max-w-[30vw] md:ml-auto opacity-0 md:w-0"
@@ -168,7 +168,7 @@ function MenuContent({ setIsOpen, setReserveModalIsOpen }: MenuContentProps) {
 					/>
 					<InfiniteScrollText
 						className="absolute top-1/2 left-1/2 -translate-1/2"
-						fontSize={"70px"}
+						fontSize={innerWidth <= 768 ? "70px" : "18vw"}
 						duration={150}
 						opacity={1}
 						word={"Capsules®"}
