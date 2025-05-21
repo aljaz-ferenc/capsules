@@ -5,14 +5,19 @@ import capsulesData from "../data/capsulesData.ts";
 import { cn } from "../utils/utils.ts";
 import { ReserveModalContext } from "../state/ReserveModalContext.tsx";
 import MainButton from "./shared/MainButton.tsx";
+import { useClickAway } from "@uidotdev/usehooks";
 
 export default function ReserveModal() {
+	const { setReserveModalIsOpen } = use(ReserveModalContext);
 	const [isPresent, safeToRemove] = usePresence();
 	const [scope, animate] = useAnimate();
 	const [selectedCapsule, setSelectedCapsule] = useState<
 		"classic" | "terrace" | "desert"
 	>("classic");
-	const { setReserveModalIsOpen } = use(ReserveModalContext);
+
+	const containerRef = useClickAway<HTMLDivElement>(() => {
+		setReserveModalIsOpen?.(false);
+	});
 
 	useEffect(() => {
 		if (isPresent) {
@@ -53,6 +58,7 @@ export default function ReserveModal() {
 			ref={scope}
 		>
 			<div
+				ref={containerRef}
 				id="background"
 				className="h-[calc(100vh-20px)] overflow-y-scroll rounded-[30px] md:ml-auto md:w-0 md:rounded-[40px]"
 			>

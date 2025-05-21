@@ -1,6 +1,10 @@
 import { AnimatePresence, motion, useTransform } from "motion/react";
 import type { MotionValue } from "motion";
 import RevealText from "../animations/RevealText.tsx";
+import { IconPlus } from "../icons.tsx";
+import { useState } from "react";
+import CapsuleDetails from "../shared/CapsuleDetails.tsx";
+import capsulesData from "../../data/capsulesData.ts";
 
 type ClassicProps = {
 	scrollYProgress: MotionValue<number>;
@@ -20,6 +24,7 @@ export default function Classic({ scrollYProgress, isActive }: ClassicProps) {
 		["brightness(1)", "brightness(0.3)"],
 	);
 	const borderRadius = useTransform(scrollYProgress, [0, 0.2], ["15vw", "3vw"]);
+	const [detailsIsOpen, setDetailsIsOpen] = useState(false);
 
 	return (
 		<motion.div
@@ -40,12 +45,36 @@ export default function Classic({ scrollYProgress, isActive }: ClassicProps) {
 				{isActive && (
 					<>
 						<RevealText text="Classic Capsule®" />
-						{/*<OpenDetailsBtn*/}
-						{/*	capsule="classic"*/}
-						{/*	sideText={capsulesDetails.classic.description}*/}
-						{/*	detailsOpen={detailsIsOpen}*/}
-						{/*	setDetailsOpen={setDetailsIsOpen}*/}
-						{/*/>*/}
+						<div className="flex">
+							<motion.button
+								initial={{ scale: 0 }}
+								animate={{ scale: 1 }}
+								exit={{ scale: 0 }}
+								transition={{ duration: 0.5 }}
+								type="button"
+								onClick={() => setDetailsIsOpen(true)}
+								className="cursor-pointer absolute bottom-[10px] right-[10px]  w-[52px] h-[52px] bg-lightBrown rounded-full grid place-items-center hover:opacity-90 md:bottom-[3vw] md:left-[1vw] md:w-[3vw] md:h-[3vw]"
+							>
+								<IconPlus />
+							</motion.button>
+							<motion.p
+								initial={{ opacity: 0, x: 50 }}
+								animate={{ opacity: 1, x: 0 }}
+								exit={{ opacity: 0, x: 50 }}
+								transition={{ duration: 0.5 }}
+								className="label  absolute md:bottom-[3.3vw] md:left-[5.5vw] w-[28vw] hidden md:block text-primary"
+							>
+								{capsulesData.classic.description}
+							</motion.p>
+						</div>
+						<AnimatePresence>
+							{detailsIsOpen && (
+								<CapsuleDetails
+									setIsOpen={setDetailsIsOpen}
+									data={capsulesData.classic}
+								/>
+							)}
+						</AnimatePresence>
 					</>
 				)}
 			</AnimatePresence>
