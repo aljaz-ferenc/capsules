@@ -12,17 +12,17 @@ type TerraceProps = {
 };
 
 export default function Terrace({ scrollYProgress, isActive }: TerraceProps) {
-	const y = useTransform(scrollYProgress, [1 / 3, 0.65], ["100vh", "0vh"]);
+	const y = useTransform(scrollYProgress, [0.4, 0.65], ["100vh", "0vh"]);
 	const brightness = useTransform(
 		scrollYProgress,
 		[0.7, 1],
 		["brightness(1)", "brightness(0.3)"],
 	);
 	const scale = useTransform(scrollYProgress, [0.7, 1], [1, 0.9]);
-	const scaleImg = useTransform(scrollYProgress, [1 / 3, 0.65], [1.3, 1]);
+	const scaleImg = useTransform(scrollYProgress, [0.4, 0.65], [1.3, 1]);
 	const borderRadius = useTransform(
 		scrollYProgress,
-		[1 / 3, 0.65],
+		[0.4, 0.65],
 		["7vw", "3vw"],
 	);
 	const [detailsIsOpen, setDetailsIsOpen] = useState(false);

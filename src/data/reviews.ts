@@ -2,6 +2,7 @@ type User = {
 	name: string;
 	location: string;
 	image: string;
+	id: number;
 };
 
 export type Review = {
@@ -13,6 +14,7 @@ export type Review = {
 export const reviews: Review[] = [
 	{
 		user: {
+			id: 1,
 			name: "Marcus Simpson",
 			location: "New York",
 			image: "marcus.webp",
@@ -23,6 +25,7 @@ export const reviews: Review[] = [
 	},
 	{
 		user: {
+			id: 2,
 			name: "Lena Morrison",
 			location: "Los Angeles",
 			image: "lena.webp",
@@ -33,6 +36,7 @@ export const reviews: Review[] = [
 	},
 	{
 		user: {
+			id: 3,
 			name: "Jason Whitaker",
 			location: "San Francisco",
 			image: "jason.webp",

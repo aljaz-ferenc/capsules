@@ -12,9 +12,9 @@ type DesertProps = {
 };
 
 export default function Desert({ scrollYProgress, isActive }: DesertProps) {
-	const scaleImg = useTransform(scrollYProgress, [0.7, 0.9], [1.3, 1]);
+	const scaleImg = useTransform(scrollYProgress, [0.7, 0.95], [1.3, 1]);
 	const borderRadius = useTransform(scrollYProgress, [0.7, 1], ["7vw", "3vw"]);
-	const y = useTransform(scrollYProgress, [0.7, 0.9], ["100vh", "0vh"]);
+	const y = useTransform(scrollYProgress, [0.75, 0.95], ["100vh", "0vh"]);
 	const [detailsIsOpen, setDetailsIsOpen] = useState(false);
 
 	return (

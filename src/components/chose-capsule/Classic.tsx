@@ -17,13 +17,13 @@ export default function Classic({ scrollYProgress, isActive }: ClassicProps) {
 		[0, 0.25, 1 / 3, 0.7],
 		[0.45, 1, 1, 0.9],
 	);
-	const scaleImg = useTransform(scrollYProgress, [0, 0.25], [1.3, 1]);
+	const scaleImg = useTransform(scrollYProgress, [0, 0.1], [1.3, 1]);
 	const brightness = useTransform(
 		scrollYProgress,
 		[1 / 3, 0.7],
 		["brightness(1)", "brightness(0.3)"],
 	);
-	const borderRadius = useTransform(scrollYProgress, [0, 0.2], ["15vw", "3vw"]);
+	const borderRadius = useTransform(scrollYProgress, [0, 0.1], ["15vw", "3vw"]);
 	const [detailsIsOpen, setDetailsIsOpen] = useState(false);
 
 	return (
