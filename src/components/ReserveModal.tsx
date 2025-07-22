@@ -6,6 +6,7 @@ import { cn } from "../utils/utils.ts";
 import { ReserveModalContext } from "../state/ReserveModalContext.tsx";
 import MainButton from "./shared/MainButton.tsx";
 import { useClickAway } from "@uidotdev/usehooks";
+import useLockScroll from "../hooks/useLockScroll.tsx";
 
 export default function ReserveModal() {
 	const { setReserveModalIsOpen } = use(ReserveModalContext);
@@ -18,6 +19,8 @@ export default function ReserveModal() {
 	const containerRef = useClickAway<HTMLDivElement>(() => {
 		setReserveModalIsOpen?.(false);
 	});
+
+	useLockScroll(isPresent);
 
 	useEffect(() => {
 		if (isPresent) {

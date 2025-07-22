@@ -5,6 +5,7 @@ import { useAnimate, usePresence } from "motion/react";
 import { ReserveModalContext } from "../../state/ReserveModalContext.tsx";
 import { useClickAway } from "@uidotdev/usehooks";
 import { animationConfig } from "../constants/animationConfig.ts";
+import useLockScroll from "../../hooks/useLockScroll.tsx";
 
 type CapsuleDetailsProps = {
 	data: (typeof capsulesData)["classic"];
@@ -21,6 +22,8 @@ export default function CapsuleDetails({
 	const contentRef = useClickAway<HTMLDivElement>(() => {
 		setIsOpen(false);
 	});
+
+	useLockScroll(isPresent);
 
 	useEffect(() => {
 		if (isPresent) {

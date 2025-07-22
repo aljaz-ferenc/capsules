@@ -7,6 +7,7 @@ import InfiniteScrollText from "../animations/InfiniteScrollText.tsx";
 import { links } from "../constants/links.ts";
 import Link from "../footer/Link.tsx";
 import { cn } from "../../utils/utils.ts";
+import useLockScroll from "../../hooks/useLockScroll.tsx";
 
 type MenuProps = {
 	setReserveModalIsOpen: Dispatch<SetStateAction<boolean>> | null;
@@ -14,6 +15,7 @@ type MenuProps = {
 
 export default function Menu({ setReserveModalIsOpen }: MenuProps) {
 	const [isOpen, setIsOpen] = useState(false);
+	useLockScroll(isOpen);
 
 	return (
 		<>
