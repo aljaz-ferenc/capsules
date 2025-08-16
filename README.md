@@ -1,6 +1,6 @@
-# TrainTrackr
+# Capsules
 
-## Fitness and Nutrition Tracker
+## All About Scroll Animations
 
 Capsules is a clone of a modern, visually engaging landing page built to showcase the power of scroll-based animations using the Motion (former Framer Motion) library. Every section is designed to respond dynamically to the user's scroll, creating a smooth and immersive experience that highlights how motion can enhance storytelling on the web.
 ## Tech Stack
